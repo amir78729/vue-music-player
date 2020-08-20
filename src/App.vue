@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="north"><app-header></app-header></div >
-    <div class="col-sm-3" id="east"><app-right-panel></app-right-panel></div>
-    <div class="col-sm-3" id="west"><app-left-panel></app-left-panel></div>
+    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>
+    <div class="side col-sm-3" id="west"><app-left-panel></app-left-panel></div>
     <div id="center">hi</div>
     <div id="south"><app-footer></app-footer></div>
 
- 
+
 <!--    <router-view/>-->
   </div>
 </template>
@@ -30,27 +30,39 @@
 
 <style>
   #app {
-    height: 100%;
-    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
 
   }
   /*************************************************************************************************************/
-  div { border : 1px solid black }
+  /*div { border : 1px solid black }*/
   /*#north    { margin:0;  padding:0em;  }*/
   /*#south    { margin:0;  padding:0em;  }*/
   /*#east     { margin:0;  padding:0em;  width:6em; height:22em; float:left; margin-right:1.1em }*/
   /*#west     { margin:0;  padding:0em;  width:6em; height:22em; float:right; margin-left:1.1em }*/
   /*#center   { margin:0;  padding:0em;  padding-bottom:0em; }*/
   /*#center:after    { content:' '; clear:both; display:block; height:0; overflow:hidden }*/
+
+  .side {
+    background-color: #333333;
+    height: 100px;
+    /*display: flex;*/
+    margin: 0;
+    padding: 0;
+  }
   #east {
     float: right;
+    /*display: flex;*/
+
     margin: 0;
     padding: 0;
   }
   #west {
     float: left;
+    /*display: flex;*/
     margin: 0;
     padding: 0;
+
   }
   #center:after {
     content: '';
@@ -62,6 +74,8 @@
   #south {
     width: 100%;
     bottom: 0px;
+    /*height: 80px;*/
+    background-color: #333333;
   }
   #north{
     width: 100%;
