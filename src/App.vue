@@ -6,7 +6,7 @@
     <div id="center">hi</div>
     <div id="south"><app-footer></app-footer></div>
 
-
+ 
 <!--    <router-view/>-->
   </div>
 </template>
