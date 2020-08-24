@@ -21,27 +21,29 @@
         <button class="btn" id="repeat"><i class="fa fa-play" aria-hidden="true"></i></button>
       </div>
       <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
-        <div class="slidecontainer" style="position: absolute; right: 0; top: -55px">
-          <input type="range" min="1" max="100" value="50" class="slider" id="volume">
-        </div>
+        <footer-volume></footer-volume>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
+  import Volume from "./Volume.vue";
 
 
 
   export default {
     data() {
       return {
+        volume: 50,
         currentSongName: 'Song Name',
         currentSongArtist: 'Artist Name',
         currentSongCover: 'https://upload.wikimedia.org/wikipedia/en/b/b3/Opeth_-_Deliverance.jpg',
         timelinePercentage: 0.5
       }
+    },
+    components :{
+      footerVolume: Volume,
     },
   }
 </script>
@@ -121,8 +123,11 @@
     border-radius: 50% ;
     background: #5bc0de; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    transition: all .2s;
   }
   .slider::-webkit-slider-thumb:hover {
+    width: 9px; /* Set a specific slider handle width */
+    height: 9px; /* Slider handle height */
     box-shadow: 0 0 10px 0 #5bc0de;
     transition: all .2s;
   }
@@ -135,6 +140,8 @@
     transition: all .2s;
   }
   .slider::-moz-range-thumb:hover {
+    width: 9px; /* Set a specific slider handle width */
+    height: 9px; /* Slider handle height */
     box-shadow: 0 0 10px 0 #5bc0de;
     transition: all .2s;
   }
