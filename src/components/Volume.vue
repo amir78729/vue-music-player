@@ -7,12 +7,16 @@
 <!--        <input v-model="volume" type="range" min="1" max="100" value="50" class="slider" id="volume">-->
 <!--      </div>-->
       <div class="col-sm-1" >
-        <div id="icon">
+        <div id="icon" :style="{backgroundImage: `url(${volumeBackground})`}">
 
         </div>
+
       </div>
+<!--      <div class="slidecontainer " >-->
+<!--        <input v-model="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">-->
+<!--      </div>-->
       <div class="slidecontainer " >
-        <input v-model="volume" type="range" min="1" max="100" value="50" class="slider" id="volume">
+        <input :value="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">
       </div>
     </div>
 </template>
@@ -22,16 +26,32 @@
       name: "volume",
       data() {
         return {
-          volume: 50
+          volume: 50,
+          volumeBackground: "../icons/png/003-volume-1.png"
         }
       },
+      methods: {
+        changeVolume(e) {
+          this.volume = e.target.value
+          if (e.target.value> 60) {
+            this.volumeBackground = "../icons/png/003-volume-1.png";
+          }else if (e.target.value>0) {
+            this.volumeBackground = "../icons/png/006-volume.png";
+          }else {
+            this.volumeBackground = "../icons/png/004-mute-1.png";
+          }
+        }
+      }
     }
 </script>
 
 <style scoped>
   #icon {
+    /*filter: brightness(0.5) sepia(1) saturate(10000%);*/
+    /*background-image: url("../icons/png/003-volume-1.png");*/
     margin: 5px;
-    background-size: 10%;
+    background-repeat: no-repeat;
+    background-size: 100%;
     height: 20px;
     width: 20px;
     background-color: #5bc0de;

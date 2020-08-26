@@ -4,7 +4,7 @@
       <button class="btn" id="search-button">
         <i class="fa fa-search" style="color: white; text-align: left"></i>
       </button>
-      <input type="text" id="search-area">
+      <input type="text" id="search-area" style="outline: none">
 
       </input>
     </div>
@@ -41,44 +41,40 @@ export default {
     position: absolute;
     background-color: #ffffff;
     height: 30px;
-    left: 30px;
+    left: 15px;
     top: 15px;
-    width: 0;
+    width: 30px;
     border-radius: 15px;
     transition: all .5s;
-
-
+    color: white;
   }
   .search:hover #search-area {
-    width: 100px;
+    width: 150px;
     left: 15px;
-    transition: all .5s ease-in;
-    /*transition: width .5s;*/
+    transition: all .5s ease-in-out;
+    color: black;
   }
   .search #search-button {
     position: absolute;
-    left: 15px;
-    top: 15px;
+    left: 17px;
+    top: 17px;
     font-size: 10px;
     text-align: center;
     background-color: #5bc0de;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 15px;
     z-index: 6;
     transition: all .5s;
-
+    box-shadow: 0 0 100px 0 #00000022 inset;
   }
   .search:hover #search-button {
     position: absolute;
-    left: 85px;
-    height: 28px;
-    width: 28px;
-    margin: 1px;
-    /*transition: all .5s;*/
-    transition: all .485s ease-in-out;
-    transition-delay:  .15s;
+    left: 137px;
+    transition: all .5s ease-in-out;
+  }
 
-
+  .search #search-button:hover {
+    box-shadow: none;
   }
 </style>
