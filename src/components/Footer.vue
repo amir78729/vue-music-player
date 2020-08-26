@@ -14,11 +14,16 @@
         </div>
       </div>
       <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
-        <button class="btn" id="shuffle"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="btn" id="prev"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="btn" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="btn" id="next"><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="btn" id="repeat"><i class="fa fa-play" aria-hidden="true"></i></button>
+<!--        <button class="btn" id="shuffle"><i class="fa fa-play" aria-hidden="true"></i></button>-->
+
+<!--        <button class=""><span id="play">i</span></button>-->
+
+        <button class="btn" id="shuffle"></button>
+        <button class="btn" id="prev"   ></button>
+        <button class="btn" id="play"   ></button>
+        <button class="btn" id="next"   ></button>
+        <button class="btn" id="repeat" ></button>
+
       </div>
       <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
         <footer-volume></footer-volume>
@@ -56,8 +61,21 @@
   }
 
 
-  #play {
-    /*text: 'play';*/
+  #shuffle{
+    background-image: url("../icons/png/021-shuffle.png");
+
+  }
+  #prev{
+    background-image: url("../icons/png/019-previous.png");
+  }
+  #play{
+    background-image: url("../icons/png/038-play-arrow.png");
+  }
+  #next{
+    background-image: url("../icons/png/020-skip.png");
+  }
+  #repeat{
+    background-image: url("../icons/png/027-repeat.png");
   }
   .buttons {
     /*background-color: red;*/
@@ -77,15 +95,20 @@
     width: 50px;
     border-radius: 50%;
     transition: all .3s;
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
   }
   .buttons button:hover {
     background-color: #333333;
     color: #5bc0de;
-    border: solid #5bc0de 2px;
-    font-size: 20px;
-    margin: 2px;
-    height: 54px;
-    width: 54px;
+    border: solid #5bc0de 3px;
+    /*font-size: 20px;*/
+    /*margin: 2px;*/
+    /*height: 54px;*/
+    /*width: 54px;*/
     position: center;
     transition: all .3s;
     box-shadow: 0 0 50px 0 #00000066;

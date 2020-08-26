@@ -7,16 +7,19 @@
 <!--        <input v-model="volume" type="range" min="1" max="100" value="50" class="slider" id="volume">-->
 <!--      </div>-->
       <div class="col-sm-1" >
-        <div id="icon" :style="{backgroundImage: `url(${volumeBackground})`}">
-
+<!--        <div id="icon" :style="{backgroundImage:`url(${this.volumeBackground})`}">-->
+        <div id="icon"
+        :class="{'vol3': volume >= 66,
+        'vol2': 66>volume && volume >= 33,
+        'vol1': 33>volume && volume > 0,
+        'vol0': volume == 0,
+        }">
         </div>
-
       </div>
-<!--      <div class="slidecontainer " >-->
-<!--        <input v-model="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">-->
-<!--      </div>-->
-      <div class="slidecontainer " >
+      <div class="slidecontainer " style="padding-left: 20px">
+<!--        <input :value="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">-->
         <input :value="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">
+
       </div>
     </div>
 </template>
@@ -32,13 +35,16 @@
       },
       methods: {
         changeVolume(e) {
-          this.volume = e.target.value
+          this.volume = e.target.value;
           if (e.target.value> 60) {
             this.volumeBackground = "../icons/png/003-volume-1.png";
+            // document.getElementById("icon").style.backgroundImage = "url('../icons/png/003-volume-1.png')";
           }else if (e.target.value>0) {
             this.volumeBackground = "../icons/png/006-volume.png";
+            // document.getElementById("icon").style.backgroundImage = "url('../icons/png/006-volume.png')";
           }else {
             this.volumeBackground = "../icons/png/004-mute-1.png";
+            // document.getElementById("icon").style.backgroundImage = "url('../icons/png/004-mute-1.png')";
           }
         }
       }
@@ -46,15 +52,27 @@
 </script>
 
 <style scoped>
+  .vol0{
+    background-image: url("../icons/png/004-mute-1.png");
+  }
+  .vol1{
+    background-image: url("../icons/png/005-mute.png");
+  }
+  .vol2{
+    background-image: url("../icons/png/006-volume.png");
+  }
+  .vol3{
+    background-image: url("../icons/png/003-volume-1.png");
+  }
   #icon {
     /*filter: brightness(0.5) sepia(1) saturate(10000%);*/
     /*background-image: url("../icons/png/003-volume-1.png");*/
     margin: 5px;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     height: 20px;
     width: 20px;
-    background-color: #5bc0de;
+    /*background-color: #5bc0de;*/
   }
 
   /* The slider itself */
