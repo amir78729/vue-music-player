@@ -44,7 +44,7 @@
 
   .side {
     background-color: #333333;
-    height: 100px;
+    height: calc(100vh - 130px);
     /*display: flex;*/
     margin: 0;
     padding: 0;
@@ -52,12 +52,13 @@
   #east {
     float: right;
     /*display: flex;*/
-
+    /*height: 100%;*/
     margin: 0;
     padding: 0;
   }
   #west {
     float: left;
+
     /*display: flex;*/
     margin: 0;
     padding: 0;
