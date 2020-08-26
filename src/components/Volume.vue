@@ -1,13 +1,6 @@
 <template>
     <div class="row" style="position: absolute; right: 10px;top: -55px">
-<!--      <div class="col-sm-1" style="position: absolute; right: 150px; top: -55px">-->
-<!--        hi-->
-<!--      </div>-->
-<!--      <div class="slidecontainer col-sm-11" style="position: absolute; right: 0; top: -55px; padding: 0 0 0 100px">-->
-<!--        <input v-model="volume" type="range" min="1" max="100" value="50" class="slider" id="volume">-->
-<!--      </div>-->
       <div class="col-sm-1" >
-<!--        <div id="icon" :style="{backgroundImage:`url(${this.volumeBackground})`}">-->
         <div id="icon"
         :class="{'vol3': volume >= 66,
         'vol2': 66>volume && volume >= 33,
@@ -17,7 +10,6 @@
         </div>
       </div>
       <div class="slidecontainer " style="padding-left: 20px">
-<!--        <input :value="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">-->
         <input :value="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">
 
       </div>
