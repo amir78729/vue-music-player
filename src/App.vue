@@ -3,7 +3,7 @@
     <div id="north"><app-header></app-header></div >
     <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>
     <div class="side col-sm-3" id="west"><app-left-panel></app-left-panel></div>
-    <div id="center">hi</div>
+    <div id="center"><app-center></app-center></div>
     <div id="south"><app-footer></app-footer></div>
 
 
@@ -16,13 +16,16 @@
   import Footer from "./components/Footer.vue"
   import RightPanel from "./components/RightPanel.vue"
   import LeftPanel from "./components/LeftPanel.vue"
+  import Center from "./components/Center.vue"
 
   export default {
     components:{
+      Center,
       appHeader: Header,
       appFooter: Footer,
       appRightPanel: RightPanel,
       appLeftPanel: LeftPanel,
+      appCenter: Center,
     },
     name: 'App'
   }
@@ -66,10 +69,13 @@
     padding: 0;
 
   }
+  #center {
+    height: calc(100vh - 130px);
+  }
   #center:after {
     content: '';
     display: block;
-    overflow: hidden;
+    overflow: auto;
     clear: both;
     height: 0;
   }

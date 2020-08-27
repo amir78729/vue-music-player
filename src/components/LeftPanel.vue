@@ -51,20 +51,28 @@
         <div class="right-icon"><div class="line1"></div><div class="line2"></div></div>
         Playlists</button>
       <div id="playlists" class="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul class="" style="margin: 0; padding: 0">
+          <button class="btn  item" v-for="playlist in playlists">{{ playlist }}</button>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
+  export default {
+    data() {
+      return {
+        playlists: ['playlist 1','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2'],
+      }
+    },
+  }
 </script>
 
 <style>
   .accordion {
     background-color: #252525;
-    color: #5bc0de;
+    color: white;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -87,7 +95,9 @@
   .accordion:focus{
     border: none;
     outline: none;
-    box-shadow: 0 0 0px 1px #5bc0de inset;
+    box-shadow: 3px 0 0px 0px #5bc0de inset;
+    color: #5bc0de;
+    background-color: #373737;
     transition: all .4s;
   }
   .panel {
@@ -135,7 +145,8 @@
   .accordion ~ div{
     opacity: 0;
     height: 0;
-    /*display: none;*/
+    display: none;
+
     transition: all .5s;
     font-size: 0;
 
@@ -145,7 +156,24 @@
     height: auto;
     opacity: 1;
     font-size: 15px;
-    /*display: block;*/
+    display: block;
+    transition: all .5s;
+  }
+  .item {
+    background-color: #44444400;
+    /*padding-left: 15px;*/
+    border-radius: 0;
+    outline: none;
+    color: white;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 0 0 0 #5bc0de inset;
+    transition: all .5s;
+  }
+  .item:hover {
+    background-color: #404040;
+    color: #5bc0de;
+    box-shadow: 2px 0 0 0 white inset;
     transition: all .5s;
   }
 
