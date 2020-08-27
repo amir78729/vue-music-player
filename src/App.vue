@@ -45,6 +45,7 @@
   .side {
     background-color: #333333;
     height: calc(100vh - 130px);
+    overflow: auto;
     /*display: flex;*/
     margin: 0;
     padding: 0;
@@ -58,8 +59,9 @@
   }
   #west {
     float: left;
-
+    width: 250px;
     /*display: flex;*/
+
     margin: 0;
     padding: 0;
 
