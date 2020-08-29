@@ -1,32 +1,27 @@
 <template>
-  <div class="footer ">
-<!--    <div class="timeline" :style="{width: 100*timelinePercentage+'%'}">-->
-<!--    </div>-->
-    <div style="position: absolute; top:  -18px; width: 100%;">
-      <input type="range" min="1" max="100" value="50" class="slider" id="timeline">
-    </div>
-    <div class="container-fluid">
-      <div class="song-info col-lg-3 col-md-3 col-sm-3 col-xs-2 row">
-        <div :style="{backgroundImage:`url(${currentSongCover})`}" class="song-cover "></div>
-        <div class="text">
-          <p style="font-size: 16px">{{ currentSongName }}</p>
-          <p style="font-size: 14px">{{ currentSongArtist }}</p>
+  <div class="footer-empty">
+    <div class="footer ">
+      <div style="position: absolute; top:  -18px; width: 100%;">
+        <input type="range" min="1" max="100" value="50" class="slider" id="timeline">
+      </div>
+      <div class="container-fluid">
+        <div class="song-info col-lg-3 col-md-3 col-sm-3 col-xs-2 row">
+          <div :style="{backgroundImage:`url(${currentSongCover})`}" class="song-cover "></div>
+          <div class="text">
+            <p style="font-size: 16px">{{ currentSongName }}</p>
+            <p style="font-size: 14px">{{ currentSongArtist }}</p>
+          </div>
         </div>
-      </div>
-      <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
-<!--        <button class="btn" id="shuffle"><i class="fa fa-play" aria-hidden="true"></i></button>-->
-
-<!--        <button class=""><span id="play">i</span></button>-->
-
-        <button class="btn" id="shuffle"></button>
-        <button class="btn" id="prev"   ></button>
-        <button class="btn" id="play"   ></button>
-        <button class="btn" id="next"   ></button>
-        <button class="btn" id="repeat" ></button>
-
-      </div>
-      <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
-        <footer-volume></footer-volume>
+        <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
+          <button class="btn" id="shuffle"></button>
+          <button class="btn" id="prev"   ></button>
+          <button class="btn" id="play"   ></button>
+          <button class="btn" id="next"   ></button>
+          <button class="btn" id="repeat" ></button>
+        </div>
+        <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
+          <footer-volume></footer-volume>
+        </div>
       </div>
     </div>
   </div>
@@ -34,8 +29,6 @@
 
 <script>
   import Volume from "./Volume.vue";
-
-
 
   export default {
     data() {
@@ -54,10 +47,21 @@
 </script>
 
 <style scoped>
+  .footer-empty{
+    position: relative;
+  }
+  .footer-empty .footer{
+    bottom: -66px;
+  }
+  .footer-empty:hover .footer{
+    box-shadow: 0 0 20px 0 #00000052 ;
+    bottom: 0;
+  }
   .footer {
     background-color: #222222;
     position: relative;
-    transition: all .5s;
+
+    transition: all .5s ease-in-out;
   }
 
 
@@ -85,7 +89,7 @@
     align-content: center;
   }
   .buttons button {
-    background-color: #444444;
+    background-color: #333333;
     color: #5bc0de;
     border: solid #5bc0de 2px;
     align-content: center;
@@ -102,7 +106,7 @@
 
   }
   .buttons button:hover {
-    background-color: #333333;
+    background-color: #303030;
     color: #5bc0de;
     border: solid #5bc0de 3px;
     /*font-size: 20px;*/
@@ -111,7 +115,7 @@
     /*width: 54px;*/
     position: center;
     transition: all .3s;
-    box-shadow: 0 0 50px 0 #00000066;
+    box-shadow: 0 0 5px 0 #000000;
     z-index: 2;
   }
   .timeline {

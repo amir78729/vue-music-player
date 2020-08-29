@@ -157,16 +157,20 @@
   }
   tr {
     color: white;
-    background-color: #373737;
+    background-color: #202020;
 
   }
   tr:hover {
     color: #5bc0de;
-    background-color: #404040;
+    background-color: #272727;
   }
   th{
-    background-color: #373737;
+    background-color: #252525;
     color: #5bc0de;
+    cursor: default;
+  }
+  td:hover{
+    text-shadow: 0 0 10px black;
     cursor: default;
   }
 
