@@ -28,11 +28,14 @@
 </template>
 
 <script>
-    export default {
-        name: "Center",
+  import {colors} from "../colors";
+
+  export default {
+      name: "Center",
       data() {
         return {
           title: 'Songs',
+          colors: colors,
           data: [
             {
               title: 'title',

@@ -32,6 +32,9 @@
 </script>
 
 <style>
+  :root {
+
+  }
   #app {
     min-height: 100%;
     min-width: 100%;
