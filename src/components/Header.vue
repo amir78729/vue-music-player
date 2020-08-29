@@ -29,7 +29,7 @@ export default {
     box-shadow: none;
   }
   .header{
-    background-color: #333333;
+    background-color: #222222;
     height: 60px;
   }
   .search{

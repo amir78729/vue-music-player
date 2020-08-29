@@ -55,7 +55,7 @@
 
 <style scoped>
   .footer {
-    background-color: #444444;
+    background-color: #222222;
     position: relative;
     transition: all .5s;
   }

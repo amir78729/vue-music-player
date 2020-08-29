@@ -1,9 +1,19 @@
 <template>
   <div id="app">
     <div id="north"><app-header></app-header></div >
-    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>
-    <div class="side col-sm-3" id="west"><app-left-panel></app-left-panel></div>
-    <div id="center"><app-center></app-center></div>
+<!--    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>-->
+<!--    <div class="side col-sm-3" id="west"><app-left-panel></app-left-panel></div>-->
+<!--    <div id="center"><app-playlist-page></app-playlist-page></div>-->
+<!--    <div id="center"><app-center></app-center></div>-->
+
+
+    <div class="middle d-flex">
+      <div class="side " id="west"><app-left-panel></app-left-panel></div>
+      <div id="center" class=""><app-playlist-page></app-playlist-page></div>
+<!--      <div id="center"><app-center></app-center></div>-->
+      <div class="side " id="east"><app-right-panel></app-right-panel></div>
+    </div>
+
     <div id="south"><app-footer></app-footer></div>
 
 
@@ -17,23 +27,34 @@
   import RightPanel from "./components/RightPanel.vue"
   import LeftPanel from "./components/LeftPanel.vue"
   import Center from "./components/Center.vue"
+  import PlaylistPage from "./components/PlaylistPage.vue"
 
   export default {
     components:{
-      Center,
       appHeader: Header,
       appFooter: Footer,
       appRightPanel: RightPanel,
       appLeftPanel: LeftPanel,
       appCenter: Center,
+      appPlaylistPage: PlaylistPage,
     },
     name: 'App'
   }
 </script>
 
 <style>
-  :root {
+  .middle{
+    height: calc(100vh - 70px);
+    padding: 60px 0 100px 0;
+    width: 100%;
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
 
+  }
+  .middle div{
+    /*overflow: auto;*/
   }
   #app {
     min-height: 100%;
@@ -50,6 +71,8 @@
 
   .side {
     background-color: #333333;
+    /*height: calc(100vh - 130px);*/
+    width: 20%;
     height: calc(100vh - 130px);
     overflow: auto;
     /*display: flex;*/
@@ -57,15 +80,15 @@
     padding: 0;
   }
   #east {
-    float: right;
+    /*float: right;*/
     /*display: flex;*/
     /*height: 100%;*/
     margin: 0;
     padding: 0;
   }
   #west {
-    float: left;
-    width: 250px;
+    /*float: left;*/
+    /*width: 250px;*/
     /*display: flex;*/
 
     margin: 0;
@@ -73,22 +96,42 @@
 
   }
   #center {
-    height: calc(100vh - 130px);
-  }
-  #center:after {
-    content: '';
-    display: block;
+    /*height: calc(100vh - 130px);*/
+    /*height: 80vh;*/
+    height: calc(100vh - 134px);
     overflow: auto;
-    clear: both;
-    height: 0;
+    width: 60%;
+  }
+
+  #center:after {
+    /*content: '';*/
+    /*display: block;*/
+    /*overflow: auto;*/
+    /*clear: both;*/
+    /*height: 0;*/
   }
   #south {
     width: 100%;
-    bottom: 0px;
     /*height: 80px;*/
     background-color: #333333;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    transition: .2s;
+
+  }
+  #south:hover {
+    transition: .2s;
+    box-shadow: 0 0 20px 0 #00000052 ;
   }
   #north{
     width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: .2s;
+  }
+  #north:hover{
+    box-shadow: 0 0 20px 0 #00000052 ;
+    transition: .2s;
   }
 </style>

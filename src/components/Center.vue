@@ -101,7 +101,7 @@
 <style scoped>
   .body {
     background-color: #373737;
-    padding: 10px;
+    /*padding: 10px;*/
   }
   .center {
     /*background-color: red;*/

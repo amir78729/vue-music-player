@@ -1,0 +1,173 @@
+<template>
+  <div class="container-fluid body">
+
+    <div class="center">
+      <div class="playlist-info container ">
+        <div :style="{backgroundImage:`url(${playlistCoverURL})`}" class="playlist-cover"></div>
+        <h1>{{playlistName}}</h1>
+        <p>{{playlistDescription}}</p>
+      </div>
+      <table class="info table table-dark">
+        <thead >
+        <tr >
+          <th>#</th>
+          <th> </th> <!-- like -->
+          <th>Title</th>
+          <th>Artist</th>
+          <th>Album</th>
+        </tr>
+        </thead>
+        <tbody class="">
+        <tr v-for="(row, index) in data">
+          <td>{{ index + 1 }}</td>
+          <td v-if="row.isLiked">Y</td>
+          <td v-else>N</td>
+          <td>{{ row.title }}</td>
+          <td>{{ row.artist }}</td>
+          <td>{{ row.album }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
+
+<script>
+  import {colors} from "../colors";
+
+  export default {
+    name: "Playlist",
+    data() {
+      return {
+        playlistName : 'Playlist Name',
+        playlistDescription : 'Playlist Description',
+        playlistCoverURL : 'https://upload.wikimedia.org/wikipedia/en/b/b3/Opeth_-_Deliverance.jpg',
+        colors: colors,
+
+        data: [
+          {
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },
+          {
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },{
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },{
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },
+          {
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },
+          {
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },
+          {
+            title: 'title',
+            isLiked: false,
+            artist: 'artist',
+            album: 'album',
+          },{
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },{
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },{
+            title: 'title',
+            isLiked: true,
+            artist: 'artist',
+            album: 'album',
+          },
+        ]
+      }
+    },
+  }
+</script>
+
+<style scoped>
+  .body {
+    background-color: #202020;
+    padding: 10px;
+  }
+  .playlist-info h1,p,div{
+    color: #5bc0de;
+    /*text-align: center;*/
+
+  }
+  .playlist-info{
+    horiz-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .playlist-cover{
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px 200px;
+    border-radius: 100px;
+    box-shadow: 0 0 100px 0 #00000077 inset;
+    transition: all .2s ease-in-out;
+  }
+  .playlist-cover:hover{
+    background-position: center;
+    background-size: 210px 210px;
+    /*border-radius: 50px;*/
+    box-shadow: 0 0 100px 0 #00000000 inset;
+    transition: all .2s ease-in-out;
+  }
+  .center {
+    /*background-color: red;*/
+    /*width: 100vh;*/
+    /*margin-left: 150px;*/
+    padding: 10px;
+    /*height: 67vh;*/
+    overflow: auto;
+
+  }
+  .title {
+    color: #5bc0de;
+  }
+  .info {
+    width: 100%;
+  }
+  tr {
+    color: white;
+    background-color: #373737;
+
+  }
+  tr:hover {
+    color: #5bc0de;
+    background-color: #404040;
+  }
+  th{
+    background-color: #373737;
+    color: #5bc0de;
+    cursor: default;
+  }
+
+</style>
