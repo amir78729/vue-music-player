@@ -71,15 +71,18 @@
 
     margin-top: 100px;
     opacity: 0;
-    transition: all .5s;
+    transition: all .5s ease-in-out;
+    transform: rotateX(-70deg);
     transition-delay:  1s;
   }
   .footer-empty:hover .footer .footer-items-hover{
     opacity: 1;
-    transition: all .5s;
+    transform: rotateX(0);
+    transition: all .5s ease-in-out;
     transition-delay:  0s;
   }
   .footer-empty .footer .footer-items-demo{
+    width: 100%;
     position: absolute;
     bottom: 30px;
     left: 0px;
@@ -87,11 +90,13 @@
     color: #5bc0de;
     opacity: 1;
     transition: all .5s ;
+    transform: rotateX(0);
     transition-delay:  1s;
   }
   .footer-empty:hover .footer .footer-items-demo{
-    left: -500px;
+    /*left: -50%;*/
     opacity: 0;
+    transform: rotateX(90deg);
     transition: all .5s ;
     transition-delay:  0s;
   }
@@ -128,7 +133,7 @@
     align-content: center;
   }
   .buttons button {
-    background-color: #333333;
+    background-color: #272727;
     color: #5bc0de;
     border: solid #5bc0de 2px;
     align-content: center;
@@ -145,16 +150,16 @@
 
   }
   .buttons button:hover {
-    background-color: #303030;
+    background-color: #222222;
     color: #5bc0de;
-    border: solid #5bc0de 3px;
+    /*border: solid #5bc0de 3px;*/
     /*font-size: 20px;*/
     /*margin: 2px;*/
     /*height: 54px;*/
     /*width: 54px;*/
     position: center;
     transition: all .3s;
-    box-shadow: 0 0 5px 0 #000000;
+    box-shadow: 0 0 5px 0 #5bc0de;
     z-index: 2;
   }
   .timeline {
@@ -169,7 +174,7 @@
     appearance: none;
     width: 100%; /* Full-width */
     height: 5px; /* Specified height */
-    background: #555555; /* Grey background */
+    background: #333333; /* Grey background */
     outline: none; /* Remove outline */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: all .2s;
@@ -177,7 +182,7 @@
 
   /* Mouse-over effects */
   .slider:hover {
-    background: #666666; /* Grey background */
+    background: #444444; /* Grey background */
   }
 
   /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */

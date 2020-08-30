@@ -74,7 +74,7 @@
     width: 50%; /* Full-width */
     height: 6px; /* Specified height */
     border-radius: 3px;
-    background: #555555; /* Grey background */
+    background: #333333; /* Grey background */
     outline: none; /* Remove outline */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: all .2s;
@@ -82,7 +82,7 @@
 
   /* Mouse-over effects */
   .slider:hover {
-    background: #666666; /* Grey background */
+    background: #444444; /* Grey background */
     width: 100%;
   }
 

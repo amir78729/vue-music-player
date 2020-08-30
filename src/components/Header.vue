@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="search">
-      <button class="btn" id="search-button">
+      <button class="btn" id="search-button" :style="style">
         <i class="fa fa-search" style="color: white; text-align: left;"></i>
         <span></span>
       </button>
@@ -13,13 +13,21 @@
 </template>
 
 <script>
-export default {
-  name: 'Header',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  import {colors} from "../colors";
+
+  export default {
+    name: 'Header',
+
+    data () {
+      return {
+        msg: 'Welcome to Your Vue.js App',
+        colors: colors,
+        style:{
+          backgroundColor:colors.blue
+        }
+
+      }
     }
-  }
 }
 </script>
 
@@ -63,7 +71,7 @@ export default {
     justify-content: center;
     /*font-size: 10px;*/
     text-align: center;
-    background-color: #5bc0de;
+    /*background-color: #5bc0de;*/
     width: 26px;
     height: 26px;
     border-radius: 15px;

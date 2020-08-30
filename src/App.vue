@@ -43,6 +43,7 @@
 </script>
 
 <style>
+
   .middle{
     height: calc(100vh - 70px);
     padding: 60px 0 100px 0;
@@ -51,7 +52,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0;
-
+    margin-bottom: 70px;
   }
   .middle div{
     /*overflow: auto;*/
