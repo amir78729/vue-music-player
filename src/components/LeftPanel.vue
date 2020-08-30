@@ -29,7 +29,7 @@
 <!--    </div>-->
     <div class="accordion-panel">
       <button id="songs-button" class="btn accordion">
-        <div class="right-icon"><div class="line1"></div><div class="line2"></div></div>
+        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
         Songs
       </button>
       <div id="songs" class="">
@@ -39,7 +39,7 @@
 
     <div class="accordion-panel">
       <button id="albums-button" class="btn accordion">
-        <div class="right-icon"><div class="line1"></div><div class="line2"></div></div>
+        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
         Albums</button>
       <div id="albums" class="">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -48,7 +48,7 @@
 
     <div class="accordion-panel">
       <button id="playlists-button" class="btn accordion">
-        <div class="right-icon"><div class="line1"></div><div class="line2"></div></div>
+        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
         Playlists</button>
       <div id="playlists" class="">
         <ul class="" style="margin: 0; padding: 0">
@@ -60,12 +60,15 @@
 </template>
 
 <script>
+  import {colors} from "../colors";
+
   export default {
     data() {
       return {
         playlists: ['playlist 1','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2'],
       }
     },
+    props: ['color'],
   }
 </script>
 
@@ -117,7 +120,7 @@
   .right-icon .line1{
     position: absolute;
     left: 5px;
-    background-color: #5bc0de;
+    /*background-color: #5bc0de;*/
     height: 12px;
     width: 2px;
     transition: all .5s;
@@ -126,7 +129,7 @@
   .right-icon .line2{
     position: absolute;
     left: 5px;
-    background-color: #5bc0de;
+    /*background-color: #5bc0de;*/
     height: 12px;
     width: 2px;
     rotation-point: 6px 6px;

@@ -8,28 +8,94 @@
       <input type="text" id="search-area" style="outline: none">
       </input>
     </div>
+    <div class="color-palette-demo">
+      <div class="color-palette-text ">
+        change color
+      </div>
+      <div class="color-palette">
+        <button class="btn color-button" :style="{backgroundColor: colors.blue}" @click="changeColor('blue')" ></button>
+        <button class="btn color-button" :style="{backgroundColor: colors.red}" @click="changeColor('red')" ></button>
+        <button class="btn color-button" :style="{backgroundColor: colors.yellow}" @click="changeColor('yellow')" ></button>
+        <button class="btn color-button" :style="{backgroundColor: colors.green}" @click="changeColor('green')" ></button>
+        <button class="btn color-button" :style="{backgroundColor: colors.purple}" @click="changeColor('purple')" ></button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import {colors} from "../colors";
-
+  import { colors } from "../colors";
 
   export default {
     name: 'Header',
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
+        colors: colors,
         style:{
           backgroundColor: this.color,
         }
       }
     },
     props:['color'],
+    methods: {
+      changeColor(color){
+        this.$emit("colorChanged", color);
+      }
+    }
 }
 </script>
 
 <style scoped>
+  .color-palette-demo .color-palette-text{
+    opacity: 1;
+    text-align: center;
+    border: solid 1px white;
+    border-radius: 15px;
+    color: white;
+    height: 30px;
+    width: 165px;
+    transform: rotateX(0deg);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all .5s ease-in-out;
+  }
+  .color-palette-demo .color-palette{
+    opacity: 0;
+    transform: rotateX(90deg);
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    transition: all .5s ease-in-out;
+  }
+  .color-palette-demo:hover .color-palette-text{
+    opacity: 0;
+    transform: rotateX(90deg);
+    transition: all .5s ease-in-out;
+    top: 35px;
+  }
+  .color-palette-demo:hover .color-palette{
+    opacity: 1;
+    transform: rotateX(0deg);
+    transition: all .5s ease-in-out;
+    top: 15px;
+  }
+  .color-palette{
+
+  }
+  .color-palette .color-button{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+  .color-palette .color-button:hover{
+    box-shadow: 0 0 100px 10px #00000088 inset;
+
+  }
   input {
     border: none;
     box-shadow: none;

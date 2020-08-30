@@ -4,11 +4,5 @@ export var colors = {
   yellow: '#ffc107',
   red: '#dc3545',
   purple: '#7b019a',
-}
-;
+};
 
-export var currentColor;
-
-function makeRed() {
-  currentColor = colors.red;
-}

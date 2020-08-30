@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <button @click="changeColor('blue')" >blue</button>
-    <button @click="changeColor('red')" >red</button>
-    <button @click="changeColor('yellow')" >yellow</button>
-    <button @click="changeColor('green')" >green</button>
-    <button @click="changeColor('purple')" >purple</button>
+<!--    <button @click="changeColor('blue')" >blue</button>-->
+<!--    <button @click="changeColor('red')" >red</button>-->
+<!--    <button @click="changeColor('yellow')" >yellow</button>-->
+<!--    <button @click="changeColor('green')" >green</button>-->
+<!--    <button @click="changeColor('purple')" >purple</button>-->
 
 
-    <div id="north"><app-header :color="currentColor"></app-header></div >
+    <div id="north"><app-header @colorChanged="changeColor($event)" :color="currentColor"></app-header></div >
 <!--    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>-->
 <!--    <div class="side col-sm-3" id="west"><app-left-panel></app-left-panel></div>-->
 <!--    <div id="center"><app-playlist-page></app-playlist-page></div>-->
@@ -35,7 +35,7 @@
   import LeftPanel from "./components/LeftPanel.vue"
   import Center from "./components/Center.vue"
   import PlaylistPage from "./components/PlaylistPage.vue"
-  import {colors, currentColor} from "./colors";
+  import {colors} from "./colors";
 
   export default {
     components:{
@@ -77,7 +77,7 @@
     height: calc(100vh - 70px);
     padding: 60px 0 100px 0;
     width: 100%;
-    background-color: red;
+    /*background-color: red;*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0;
