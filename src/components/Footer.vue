@@ -4,23 +4,28 @@
       <div style="position: absolute; top:  -18px; width: 100%;">
         <input type="range" min="1" max="100" value="50" class="slider" id="timeline">
       </div>
-      <div class="container-fluid">
-        <div class="song-info col-lg-3 col-md-3 col-sm-3 col-xs-2 row">
-          <div :style="{backgroundImage:`url(${currentSongCover})`}" class="song-cover "></div>
-          <div class="text">
-            <p style="font-size: 16px">{{ currentSongName }}</p>
-            <p style="font-size: 14px">{{ currentSongArtist }}</p>
-          </div>
+        <div class="footer-items-demo">
+          <p>{{currentSongName}} | {{currentSongArtist}}</p>
         </div>
-        <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
-          <button class="btn" id="shuffle"></button>
-          <button class="btn" id="prev"   ></button>
-          <button class="btn" id="play"   ></button>
-          <button class="btn" id="next"   ></button>
-          <button class="btn" id="repeat" ></button>
-        </div>
-        <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
-          <footer-volume></footer-volume>
+        <div class="footer-items-hover">
+          <div class="container-fluid">
+            <div class="song-info col-lg-3 col-md-3 col-sm-3 col-xs-2 row">
+              <div :style="{backgroundImage:`url(${currentSongCover})`}" class="song-cover "></div>
+              <div class="text">
+                <p style="font-size: 16px">{{ currentSongName }}</p>
+                <p style="font-size: 14px">{{ currentSongArtist }}</p>
+              </div>
+            </div>
+            <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
+              <button class="btn" id="shuffle"></button>
+              <button class="btn" id="prev"   ></button>
+              <button class="btn" id="play"   ></button>
+              <button class="btn" id="next"   ></button>
+              <button class="btn" id="repeat" ></button>
+            </div>
+            <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
+              <footer-volume></footer-volume>
+            </div>
         </div>
       </div>
     </div>
@@ -51,14 +56,48 @@
     position: relative;
   }
   .footer-empty .footer{
-    bottom: -66px;
+    bottom: -40px;
+    background-color: #222222;
+    transition-delay:  1s;
   }
   .footer-empty:hover .footer{
+    background-color: #191919;
     box-shadow: 0 0 20px 0 #00000052 ;
     bottom: 0;
+    transition-delay:  0s;
   }
+
+  .footer-empty .footer .footer-items-hover{
+
+    margin-top: 100px;
+    opacity: 0;
+    transition: all .5s;
+    transition-delay:  1s;
+  }
+  .footer-empty:hover .footer .footer-items-hover{
+    opacity: 1;
+    transition: all .5s;
+    transition-delay:  0s;
+  }
+  .footer-empty .footer .footer-items-demo{
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    text-align: center;
+    color: #5bc0de;
+    opacity: 1;
+    transition: all .5s ;
+    transition-delay:  1s;
+  }
+  .footer-empty:hover .footer .footer-items-demo{
+    left: -500px;
+    opacity: 0;
+    transition: all .5s ;
+    transition-delay:  0s;
+  }
+
   .footer {
-    background-color: #222222;
+    /*background-color: #222222;*/
     position: relative;
 
     transition: all .5s ease-in-out;
