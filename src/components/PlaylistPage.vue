@@ -2,14 +2,14 @@
   <div class="container-fluid body">
 
     <div class="center">
-      <div class="playlist-info container ">
+      <div class="playlist-info container " :style="{color: color}">
         <div :style="{backgroundImage:`url(${playlistCoverURL})`}" class="playlist-cover"></div>
         <h1>{{playlistName}}</h1>
         <p>{{playlistDescription}}</p>
       </div>
       <table class="info table table-dark">
         <thead >
-        <tr >
+        <tr :style="{color: color}">
           <th>#</th>
           <th> </th> <!-- like -->
           <th>Title</th>
@@ -37,6 +37,7 @@
 
   export default {
     name: "Playlist",
+    props: ['color'],
     data() {
       return {
         playlistName : 'Playlist Name',
@@ -108,15 +109,17 @@
 
 <style scoped>
   .body {
+
     background-color: #202020;
     padding: 10px;
   }
-  .playlist-info h1,p,div{
-    color: #5bc0de;
+  .playlist-info h1,p{
+    /*color: #5bc0de;*/
     /*text-align: center;*/
 
   }
   .playlist-info{
+    transition: all 0.5s;
     horiz-align: center;
     justify-content: center;
     align-items: center;
@@ -166,8 +169,9 @@
   }
   th{
     background-color: #252525;
-    color: #5bc0de;
+    /*color: #5bc0de;*/
     cursor: default;
+    transition: all 0.5s;
   }
   td:hover{
     text-shadow: 0 0 10px black;

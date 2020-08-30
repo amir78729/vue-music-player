@@ -59,13 +59,13 @@
   .footer-empty .footer{
     bottom: -40px;
     background-color: #222222;
-    transition-delay:  1s;
+    /*transition-delay:  1s;*/
   }
   .footer-empty:hover .footer{
     background-color: #191919;
     box-shadow: 0 0 20px 0 #00000052 ;
     bottom: 0;
-    transition-delay:  0s;
+    /*transition-delay:  0s;*/
   }
 
   .footer-empty .footer .footer-items-hover{
@@ -74,13 +74,13 @@
     opacity: 0;
     transition: all .5s ease-in-out;
     transform: rotateX(-70deg);
-    transition-delay:  1s;
+    /*transition-delay:  1s;*/
   }
   .footer-empty:hover .footer .footer-items-hover{
     opacity: 1;
     transform: rotateX(0);
     transition: all .5s ease-in-out;
-    transition-delay:  0s;
+    /*transition-delay:  0s;*/
   }
   .footer-empty .footer .footer-items-demo{
     width: 100%;
@@ -92,14 +92,14 @@
     opacity: 1;
     transition: all .5s ;
     transform: rotateX(0);
-    transition-delay:  1s;
+    /*transition-delay:  1s;*/
   }
   .footer-empty:hover .footer .footer-items-demo{
     /*left: -50%;*/
     opacity: 0;
     transform: rotateX(90deg);
     transition: all .5s ;
-    transition-delay:  0s;
+    /*transition-delay:  0s;*/
   }
 
   .footer {
