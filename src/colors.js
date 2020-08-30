@@ -1,7 +1,14 @@
-export const colors = {
-  blue: '#17a2b8',
+export var colors = {
+  blue: '#5bc0de',
   green: '#28a745',
   yellow: '#ffc107',
   red: '#dc3545',
   purple: '#7b019a',
-};
+}
+;
+
+export var currentColor;
+
+function makeRed() {
+  currentColor = colors.red;
+}

@@ -1,12 +1,11 @@
 <template>
   <div class="header">
     <div class="search">
-      <button class="btn" id="search-button" :style="style">
+      <button class="btn" id="search-button" :style="{backgroundColor: color}">
         <i class="fa fa-search" style="color: white; text-align: left;"></i>
         <span></span>
       </button>
       <input type="text" id="search-area" style="outline: none">
-
       </input>
     </div>
   </div>
@@ -15,19 +14,18 @@
 <script>
   import {colors} from "../colors";
 
+
   export default {
     name: 'Header',
-
     data () {
       return {
         msg: 'Welcome to Your Vue.js App',
-        colors: colors,
         style:{
-          backgroundColor:colors.blue
+          backgroundColor: this.color,
         }
-
       }
-    }
+    },
+    props:['color'],
 }
 </script>
 

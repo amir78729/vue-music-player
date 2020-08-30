@@ -1,10 +1,10 @@
 <template>
-  <div class="footer-empty">
+  <div class="footer-empty" :style="{color: color, borderColor: color}">
     <div class="footer ">
       <div style="position: absolute; top:  -18px; width: 100%;">
         <input type="range" min="1" max="100" value="50" class="slider" id="timeline">
       </div>
-        <div class="footer-items-demo">
+        <div class="footer-items-demo" >
           <p>{{currentSongName}} | {{currentSongArtist}}</p>
         </div>
         <div class="footer-items-hover">
@@ -17,11 +17,11 @@
               </div>
             </div>
             <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
-              <button class="btn" id="shuffle"></button>
-              <button class="btn" id="prev"   ></button>
-              <button class="btn" id="play"   ></button>
-              <button class="btn" id="next"   ></button>
-              <button class="btn" id="repeat" ></button>
+              <button class="btn" id="shuffle":style="{borderColor: color }"></button>
+              <button class="btn" id="prev"   :style="{borderColor: color }"></button>
+              <button class="btn" id="play"   :style="{borderColor: color }"></button>
+              <button class="btn" id="next"   :style="{borderColor: color }"></button>
+              <button class="btn" id="repeat" :style="{borderColor: color }"></button>
             </div>
             <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
               <footer-volume></footer-volume>
@@ -45,6 +45,7 @@
         timelinePercentage: 0.5
       }
     },
+    props: ['color'],
     components :{
       footerVolume: Volume,
     },
@@ -87,7 +88,7 @@
     bottom: 30px;
     left: 0px;
     text-align: center;
-    color: #5bc0de;
+    /*color: #5bc0de;*/
     opacity: 1;
     transition: all .5s ;
     transform: rotateX(0);
@@ -134,8 +135,8 @@
   }
   .buttons button {
     background-color: #272727;
-    color: #5bc0de;
-    border: solid #5bc0de 2px;
+    /*color: #5bc0de;*/
+    border: solid  2px;
     align-content: center;
     font-size: 18px;
     margin: 4px;
@@ -151,7 +152,7 @@
   }
   .buttons button:hover {
     background-color: #222222;
-    color: #5bc0de;
+    /*color: #5bc0de;*/
     /*border: solid #5bc0de 3px;*/
     /*font-size: 20px;*/
     /*margin: 2px;*/
@@ -222,14 +223,14 @@
   }
   .song-info p {
     /*font-weight: bold;*/
-    color: #5bc0de;
+    /*color: #5bc0de;*/
     margin-bottom: 0;
   }
   .song-info .text {
     margin: 10px 5px 5px 5px;
   }
   .song-cover {
-    background-color: #5bc0de;
+    /*background-color: #5bc0de;*/
     background-repeat: no-repeat;
     /*background-attachment: inherit;*/
     background-position: center;

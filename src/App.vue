@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <div id="north"><app-header></app-header></div >
+    <button @click="changeColor('blue')" >blue</button>
+    <button @click="changeColor('red')" >red</button>
+    <button @click="changeColor('yellow')" >yellow</button>
+    <button @click="changeColor('green')" >green</button>
+    <button @click="changeColor('purple')" >purple</button>
+
+
+    <div id="north"><app-header :color="currentColor"></app-header></div >
 <!--    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>-->
 <!--    <div class="side col-sm-3" id="west"><app-left-panel></app-left-panel></div>-->
 <!--    <div id="center"><app-playlist-page></app-playlist-page></div>-->
@@ -8,13 +15,13 @@
 
 
     <div class="middle d-flex">
-      <div class="side " id="west"><app-left-panel></app-left-panel></div>
-      <div id="center" class=""><app-playlist-page></app-playlist-page></div>
+      <div class="side " id="west"><app-left-panel :color="this.currentColor"></app-left-panel></div>
+      <div id="center" class=""><app-playlist-page :color="this.currentColor"></app-playlist-page></div>
 <!--      <div id="center"><app-center></app-center></div>-->
-      <div class="side " id="east"><app-right-panel></app-right-panel></div>
+      <div class="side " id="east"><app-right-panel :color="this.currentColor"></app-right-panel></div>
     </div>
 
-    <div id="south"><app-footer></app-footer></div>
+    <div id="south"><app-footer :color="this.currentColor"></app-footer></div>
 
 
 <!--    <router-view/>-->
@@ -28,6 +35,7 @@
   import LeftPanel from "./components/LeftPanel.vue"
   import Center from "./components/Center.vue"
   import PlaylistPage from "./components/PlaylistPage.vue"
+  import {colors, currentColor} from "./colors";
 
   export default {
     components:{
@@ -38,7 +46,28 @@
       appCenter: Center,
       appPlaylistPage: PlaylistPage,
     },
-    name: 'App'
+    name: 'App',
+    data(){
+      return{
+        colors: colors,
+        currentColor: colors.red,
+      }
+    },methods: {
+      changeColor(color){
+        if (color === 'red'){
+          this.currentColor = this.colors.red
+        }else if (color === 'blue'){
+          this.currentColor = this.colors.blue
+        }else if (color === 'yellow'){
+          this.currentColor = this.colors.yellow
+        }else if (color === 'green'){
+          this.currentColor = this.colors.green
+        }else if (color === 'purple'){
+          this.currentColor = this.colors.purple
+        }
+        // alert(color + ' ' + this.currentColor)
+      }
+    }
   }
 </script>
 
