@@ -1,28 +1,44 @@
 <template>
-  <div class="container body">
-    <h1 class="title">{{ title }}</h1>
+  <div class="container-fluid body">
     <div class="center">
-      <table class="info table table-dark">
-        <thead >
-        <tr >
-          <th>#</th>
-          <th> </th> <!-- like -->
-          <th>Title</th>
-          <th>Artist</th>
-          <th>Album</th>
-        </tr>
-        </thead>
-        <tbody class="">
-          <tr v-for="(row, index) in data">
-            <td>{{ index + 1 }}</td>
-            <td v-if="row.isLiked">Y</td>
-            <td v-else>N</td>
-            <td>{{ row.title }}</td>
-            <td>{{ row.artist }}</td>
-            <td>{{ row.album }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="header container " :style="{color: color}">
+        <h1>Home</h1>
+      </div>
+      <div class="home-item container " :style="{color: color}">
+        <h2>Home</h2>
+        <div class="category container d-flex">
+          <div class="home-item-song">
+            <div class="pic">
+              <div class="pic-hover">
+                <div class="play" :style="{backgroundColor: color}">
+                  <div class="play-sign"></div>
+                </div>
+              </div>
+            </div>
+            <div class="txt">
+              <p style="font-size: 15px">song name</p>
+              <p style="font-size: 13px">song name</p>
+            </div>
+          </div>
+
+
+          <div class="home-item-song">
+            <div class="pic">
+              <div class="pic-hover">
+                <div class="play" :style="{backgroundColor: color}">
+                  <div class="play-sign"></div>
+                </div>
+              </div>
+            </div>
+            <div class="txt">
+              <p style="font-size: 15px">song name</p>
+              <p style="font-size: 13px">song name</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -31,106 +47,126 @@
   import {colors} from "../colors";
 
   export default {
-      name: "Center",
-      data() {
-        return {
-          title: 'Songs',
-          colors: colors,
-          data: [
-            {
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },
-            {
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },{
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },{
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },
-            {
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },
-            {
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },
-            {
-              title: 'title',
-              isLiked: false,
-              artist: 'artist',
-              album: 'album',
-            },{
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },{
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },{
-              title: 'title',
-              isLiked: true,
-              artist: 'artist',
-              album: 'album',
-            },
-          ]
-        }
-      },
-    }
+    name: "Playlist",
+    props: ['color'],
+    data() {
+      return {
+        playlistName : 'Playlist Name',
+        playlistDescription : 'Playlist Description',
+        playlistCoverURL : 'https://upload.wikimedia.org/wikipedia/en/b/b3/Opeth_-_Deliverance.jpg',
+        colors: colors,
+
+        songs: [
+          {
+            title: 'windowpane',
+            isLiked: true,
+            artist: 'Opeth',
+            album: 'damnation',
+            imageURL: '',
+          },
+
+        ]
+      }
+    },
+  }
 </script>
 
 <style scoped>
   .body {
-    background-color: #373737;
-    /*padding: 10px;*/
-  }
-  .center {
-    /*background-color: red;*/
-    /*width: 100vh;*/
-    /*margin-left: 150px;*/
+    background-color: #202020;
     padding: 10px;
-    height: 67vh;
-    overflow: auto;
+  }
+  .category{
+    /*display: grid;*/
+  }
+  .header{
+    text-align: center;
+  }
+  .home-item{
 
   }
-  .title {
-    color: #5bc0de;
+  h1  {
+    font-weight: bold;
   }
-  .info {
-    width: 100%;
+  .txt {
+    text-align: center;
   }
-  tr {
-    color: white;
-    background-color: #373737;
+  .home-item-song{
+    margin: 10px;
+  }
+  .home-item .home-item-song .pic{
+    position: relative;
+    background-color: #5bc0de;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    transition: all .5s;
+  }
+  .home-item .home-item-song .pic:hover{
+    box-shadow: 0 0 100px 0 #00000099 inset;
+    transition: all .5s;
+  }
+  .home-item .home-item-song .pic .pic-hover{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    /*background-color: red;*/
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    transition: all .5s;
 
   }
-  tr:hover {
-    color: #5bc0de;
-    background-color: #404040;
+  .home-item .home-item-song .pic:hover .pic-hover{
+    opacity: 1;
+    transition: all .5s;
   }
-  th{
-    background-color: #373737;
-    color: #5bc0de;
-    cursor: default;
+  .home-item .home-item-song .pic .pic-hover .play{
+    position: absolute;
+    top: 45px;
+    left: 45px;
+    transition: all .5s;
+    opacity: 0;
   }
+  .home-item .home-item-song .pic:hover .pic-hover .play{
+    position: absolute;
+    top: 45px;
+    left: 45px;
+    transition: all .5s;
+    opacity: .5;
+  }
+  .home-item .home-item-song .pic .pic-hover .play .play-sign{
+    transition: all .5s;
+  }
+  .home-item .home-item-song .pic:hover .pic-hover .play .play-sign{
+    transition: all .5s;
+  }
+  .home-item .home-item-song .pic:hover .pic-hover .play:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .play {
+    /*background-color: red;*/
+    height: 60px;
+    width: 60px;
+    border: solid white 2px;
+    border-radius: 50%;
+    position: relative;
+  }
+  .play-sign{
+    top: 18px;
+    left: 18px;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+    border-width: 12px 0px 12px 24px;
+  }
+
+
+
 
 </style>

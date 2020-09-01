@@ -2,7 +2,7 @@
   <div class="container-fluid body">
 
     <div class="center">
-      <div class="playlist-info container " :style="{color: color}">
+      <div class="container playlist-info" :style="{color: color}">
         <div :style="{backgroundImage:`url(${playlistCoverURL})`}" class="playlist-cover"></div>
         <h1>{{playlistName}}</h1>
         <p>{{playlistDescription}}</p>
@@ -159,12 +159,12 @@
     width: 100%;
   }
   tr {
-    color: white;
+    color: #bbbbbb;
     background-color: #202020;
 
   }
   tr:hover {
-    color: #5bc0de;
+    color: white;
     background-color: #272727;
   }
   th{
