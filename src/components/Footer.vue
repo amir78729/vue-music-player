@@ -2,7 +2,7 @@
   <div class="footer-empty" :style="{color: color, borderColor: color}">
     <div class="footer ">
       <div style="position: absolute; top:  -18px; width: 100%;">
-        <input type="range" min="1" max="100" value="50" class="slider" id="timeline">
+        <input type="range" min="1" max="100" value="50" class="slider" id="timeline" :style="{borderColor: color}">
       </div>
         <div class="footer-items-demo" >
           <p>{{currentSongName}} | {{currentSongArtist}}</p>
@@ -17,11 +17,11 @@
               </div>
             </div>
             <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
-              <button class="btn" id="shuffle":style="{borderColor: color }"></button>
-              <button class="btn" id="prev"   :style="{borderColor: color }"></button>
-              <button class="btn" id="play"   :style="{borderColor: color }"></button>
-              <button class="btn" id="next"   :style="{borderColor: color }"></button>
-              <button class="btn" id="repeat" :style="{borderColor: color }"></button>
+              <button class="btn" id="shuffle":style="{borderColor: color, boxShadow: color }"></button>
+              <button class="btn" id="prev"   :style="{borderColor: color, boxShadow: color }"></button>
+              <button class="btn" id="play"   :style="{borderColor: color, boxShadow: color }"></button>
+              <button class="btn" id="next"   :style="{borderColor: color, boxShadow: color }"></button>
+              <button class="btn" id="repeat" :style="{borderColor: color, boxShadow: color }"></button>
             </div>
             <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
               <footer-volume></footer-volume>
@@ -147,6 +147,8 @@
     background-size: 40%;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: none;
+    outline: none;
 
 
   }
@@ -160,14 +162,9 @@
     /*width: 54px;*/
     position: center;
     transition: all .3s;
-    box-shadow: 0 0 5px 0 #5bc0de;
-    z-index: 2;
+    box-shadow: 0 0 50px 0 #00000066;
+    /*z-index: 2;*/
   }
-  .timeline {
-    height: 5px;
-    background-color: red;
-  }
-
 
   /* The slider itself */
   .slider {
@@ -200,7 +197,7 @@
   .slider::-webkit-slider-thumb:hover {
     width: 9px; /* Set a specific slider handle width */
     height: 9px; /* Slider handle height */
-    box-shadow: 0 0 10px 0 #5bc0de;
+    box-shadow: 0 0 10px 0 #ffffff88;
     transition: all .2s;
   }
 
@@ -214,7 +211,7 @@
   .slider::-moz-range-thumb:hover {
     width: 9px; /* Set a specific slider handle width */
     height: 9px; /* Slider handle height */
-    box-shadow: 0 0 10px 0 #5bc0de;
+    box-shadow: 0 0 10px 0 #ffffff88;
     transition: all .2s;
   }
   .song-info {

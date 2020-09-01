@@ -16,8 +16,9 @@
 
     <div class="middle d-flex">
       <div class="side " id="west"><app-left-panel :color="this.currentColor"></app-left-panel></div>
-      <div id="center" class=""><app-playlist-page :color="this.currentColor"></app-playlist-page></div>
-<!--      <div id="center"><app-center></app-center></div>-->
+
+<!--      <div id="center" class=""><app-playlist-page :color="this.currentColor"></app-playlist-page></div>-->
+      <div id="center" class=""><router-view :color="this.currentColor"></router-view></div>
       <div class="side " id="east"><app-right-panel :color="this.currentColor"></app-right-panel></div>
     </div>
 

@@ -65,7 +65,7 @@
     opacity: 0;
     transform: rotateX(90deg);
     position: absolute;
-    top: 5px;
+    top: 0px;
     right: 15px;
     transition: all .5s ease-in-out;
   }
@@ -81,9 +81,7 @@
     transition: all .5s ease-in-out;
     top: 15px;
   }
-  .color-palette{
 
-  }
   .color-palette .color-button{
     height: 30px;
     width: 30px;

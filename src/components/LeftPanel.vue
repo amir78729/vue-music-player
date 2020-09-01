@@ -28,7 +28,7 @@
 <!--      </div>-->
 <!--    </div>-->
     <div class="accordion-panel">
-      <button id="songs-button" class="btn accordion">
+      <button id="songs-button" class="btn accordion" :style="{borderColor: color}">
         <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
         Songs
       </button>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="accordion-panel">
-      <button id="albums-button" class="btn accordion">
+      <button id="albums-button" class="btn accordion" :style="{borderColor: color}">
         <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
         Albums</button>
       <div id="albums" class="">
@@ -47,7 +47,7 @@
     </div>
 
     <div class="accordion-panel">
-      <button id="playlists-button" class="btn accordion">
+      <button id="playlists-button" class="btn accordion" :style="{borderColor: color}">
         <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
         Playlists</button>
       <div id="playlists" class="">
@@ -75,7 +75,7 @@
 <style>
   .accordion {
     background-color: #252525;
-    color: white;
+    color: #BBBBBB;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -85,23 +85,24 @@
     font-size: 15px;
     transition: all .4s;
     border-radius: 0;
-    box-shadow: 0 0 0 0 #5bc0de inset;
+    box-shadow: 0 0 0 0 inset;
 
   }
 
   .active, .accordion:hover {
     background-color: #232323;
-    color: #5bc0de;
+    color: white;
     transition: all .4s;
   }
 
   .accordion:focus{
     border: none;
     outline: none;
-    box-shadow: 3px 0 0px 0px #5bc0de inset;
-    color: #5bc0de;
+    box-shadow: 0px 0 0px 0px  inset;
+    color: white;
     background-color: #373737;
     transition: all .4s;
+    border-left: solid  2px;
   }
   .panel {
     padding: 0 18px;
