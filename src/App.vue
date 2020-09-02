@@ -6,6 +6,7 @@
 <!--    <button @click="changeColor('green')" >green</button>-->
 <!--    <button @click="changeColor('purple')" >purple</button>-->
 
+<!--    <p>{{currentPage}}</p>-->
 
     <div id="north"><app-header @colorChanged="changeColor($event)" :color="currentColor"></app-header></div >
 <!--    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>-->
@@ -15,13 +16,14 @@
 
 
     <div class="middle d-flex">
-      <div class="side " id="west"><app-left-panel :color="this.currentColor"></app-left-panel></div>
+      <div class="side " id="west"><app-left-panel
+        :page="currentPage"
+        :color="this.currentColor"></app-left-panel></div>
 
 <!--      <div id="center" class=""><app-playlist-page :color="this.currentColor"></app-playlist-page></div>-->
       <div id="center" class=""><router-view :color="this.currentColor"></router-view></div>
       <div class="side " id="east"><app-right-panel :color="this.currentColor"></app-right-panel></div>
     </div>
-
     <div id="south"><app-footer :color="this.currentColor"></app-footer></div>
 
 
@@ -52,8 +54,11 @@
       return{
         colors: colors,
         currentColor: colors.red,
+        currentPage: ''
+
       }
     },methods: {
+      // change
       changeColor(color){
         if (color === 'red'){
           this.currentColor = this.colors.red
@@ -136,7 +141,7 @@
   }
   #west:hover {
     transition: .2s;
-    box-shadow: 0 0 20px 0 #00000052 ;
+    /*box-shadow: 0 0 20px 0 #00000052 ;*/
   }
   #center {
     /*height: calc(100vh - 130px);*/

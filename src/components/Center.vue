@@ -16,8 +16,8 @@
               </div>
             </div>
             <div class="txt">
-              <p style="font-size: 15px"><i class="fa fa-music"></i> {{song.title}}</p>
-              <p style="font-size: 13px"><i class="fa fa-user"></i> {{song.artist}}</p>
+              <p style="font-size: 15px"><i style="font-size: 15px" class="material-icons">music_note</i> {{song.title}}</p>
+              <p style="font-size: 13px"><i style="font-size: 15px" class="material-icons">people</i> {{song.artist}}</p>
             </div>
           </div>
 
@@ -40,8 +40,8 @@
               </div>
             </div>
             <div class="txt">
-              <p style="font-size: 15px"><i class="fa fa-music"></i> {{song.title}}</p>
-              <p style="font-size: 13px"><i class="fa fa-user"></i> {{song.artist}}</p>
+              <p style="font-size: 15px"><i style="font-size: 15px" class="material-icons">music_note</i> {{song.title}}</p>
+              <p style="font-size: 13px"><i style="font-size: 15px" class="material-icons">people</i> {{song.artist}}</p>
             </div>
           </div>
 
@@ -214,7 +214,7 @@
     top: 45px;
     left: 45px;
     transition: all .5s;
-    opacity: .5;
+    opacity: .75;
   }
   .home-item .home-item-song .pic .pic-hover .play .play-sign{
     transition: all .5s;
@@ -224,6 +224,7 @@
   }
   .home-item .home-item-song .pic:hover .pic-hover .play:hover{
     opacity: 1;
+    box-shadow: 0 0 50px 0 #00000099;
     cursor: pointer;
   }
 

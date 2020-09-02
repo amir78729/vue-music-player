@@ -1,55 +1,34 @@
 <template>
   <div style="" class="">
-<!--    <div class="accordion-panel">-->
-<!--      <button id="songs-button" type="button" class="btn accordion" data-toggle="collapse" data-target="#songs">-->
-<!--        <div class="right-icon"><div class="line1"></div><div class="line2"></div></div>-->
-<!--        Songs-->
-<!--      </button>-->
-<!--      <div id="songs" class="collapse">-->
-<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-<!--      </div>-->
-<!--    </div>-->
+<!--    {{isHome}}-->
+<!--    {{isSongs}}-->
+<!--    {{isAlbums}}-->
+<!--    {{isPlaylists}}-->
 
-<!--    <div class="accordion-panel">-->
-<!--      <button id="albums-button" type="button" class="btn accordion" data-toggle="collapse" data-target="#albums">-->
-<!--        <div class="right-icon"><div class="line1"></div><div class="line2"></div></div>-->
-<!--        Albums</button>-->
-<!--      <div id="albums" class="collapse">-->
-<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="accordion-panel">-->
-<!--      <button id="playlists-button" type="button" class="btn accordion" data-toggle="collapse" data-target="#playlists">-->
-<!--        <div class="right-icon"><div class="line1"></div><div class="line2"></div></div>-->
-<!--        Playlists</button>-->
-<!--      <div id="playlists" class="collapse">-->
-<!--        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-<!--      </div>-->
-<!--    </div>-->
     <div class="accordion-panel">
-      <button id="songs-button" class="btn accordion" :style="{borderColor: color}">
-        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
-        Songs
+      <button id="home-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('home')" :class="{'selected': isHome }">
+<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+        <i style="font-size: 15px" class="material-icons">home</i> Home
       </button>
-      <div id="songs" class="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
     </div>
 
     <div class="accordion-panel">
-      <button id="albums-button" class="btn accordion" :style="{borderColor: color}">
-        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
-        Albums</button>
-      <div id="albums" class="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
+      <button id="songs-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('songs')" :class="{'selected': isSongs }">
+<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+        <i style="font-size: 15px" class="material-icons">library_music</i> Songs
+      </button>
     </div>
 
     <div class="accordion-panel">
-      <button id="playlists-button" class="btn accordion" :style="{borderColor: color}">
-        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>
-        Playlists</button>
+      <button id="albums-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('albums')" :class="{'selected': isAlbums }">
+<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+        <i style="font-size: 15px" class="material-icons">album</i> Albums</button>
+    </div>
+
+    <div class="accordion-panel">
+      <button id="playlists-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('playlists')" :class="{'selected': isPlaylists }">
+<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+        <i style="font-size: 15px" class="material-icons">playlist_play</i> Playlists</button>
       <div id="playlists" class="">
         <ul class="" style="margin: 0; padding: 0">
           <button class="btn  item" v-for="playlist in playlists">{{ playlist }}</button>
@@ -65,10 +44,44 @@
   export default {
     data() {
       return {
+        isHome: true,
+        isSongs: false,
+        isAlbums: false,
+        isPlaylists: false,
         playlists: ['playlist 1','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2'],
       }
     },
-    props: ['color'],
+    props: ['color', 'page'],
+    methods: {
+      changePage(page){
+        if (page === 'home'){
+          this.isHome = true;
+          this.isSongs = false;
+          this.isAlbums = false;
+          this.isPlaylists = false;
+          this.$emit('homeSelected')
+        } else  if (page === 'songs'){
+          this.isHome = false;
+          this.isSongs = true;
+          this.isAlbums = false;
+          this.isPlaylists = false;
+          this.$emit('songsSelected')
+        } if (page === 'albums'){
+          this.isHome = false;
+          this.isSongs = false;
+          this.isAlbums = true;
+          this.isPlaylists = false;
+          this.$emit('albumsSelected')
+        } if (page === 'playlists'){
+          this.isHome = false;
+          this.isSongs = false;
+          this.isAlbums = false;
+          this.isPlaylists = true;
+          this.$emit('playlistsSelected')
+        }
+
+      }
+    }
   }
 </script>
 
@@ -86,9 +99,17 @@
     transition: all .4s;
     border-radius: 0;
     box-shadow: 0 0 0 0 inset;
-
   }
-
+  .selected {
+    background-image: linear-gradient(to right, #202020, #202020);
+    border-left: solid  2px;
+    transition: all .4s;
+  }
+  .selected:hover {
+    background-image: linear-gradient(to right, #252525, #202020);
+    border-left: solid  2px;
+    transition: all .4s;
+  }
   .active, .accordion:hover {
     background-color: #232323;
     color: white;
@@ -99,8 +120,8 @@
     border: none;
     outline: none;
     box-shadow: 0px 0 0px 0px  inset;
-    color: white;
-    background-color: #373737;
+    /*color: white;*/
+    /*background-color: #202020;*/
     transition: all .4s;
     border-left: solid  2px;
   }
@@ -109,6 +130,8 @@
     display: none;
     background-color: white;
     overflow: hidden;
+    transition: all .4s;
+
   }
 
   .right-icon {
@@ -117,6 +140,8 @@
     position: relative;
     float: right;
     justify-content: center;
+    transition: all .4s;
+
   }
   .right-icon .line1{
     position: absolute;
@@ -138,14 +163,14 @@
     transition: all .5s;
   }
 
-  .accordion:focus .right-icon .line2{
-    transform: rotate(135deg);
-    transition: all .5s;
-  }
-  .accordion:focus .right-icon .line1{
-    transform: rotate(45deg);
-    transition: all .5s;
-  }
+  /*.accordion:focus .right-icon .line2{*/
+  /*  transform: rotate(135deg);*/
+  /*  transition: all .5s;*/
+  /*}*/
+  /*.accordion:focus .right-icon .line1{*/
+  /*  transform: rotate(45deg);*/
+  /*  transition: all .5s;*/
+  /*}*/
   .accordion ~ div{
     opacity: 0;
     height: 0;
