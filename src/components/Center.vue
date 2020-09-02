@@ -5,10 +5,10 @@
         <h1>Home</h1>
       </div>
       <div class="home-item container " :style="{color: color}">
-        <h2>Home</h2>
+        <h3>Songs</h3>
         <div class="category container d-flex">
-          <div class="home-item-song">
-            <div class="pic">
+          <div v-for="song in songs" class="home-item-song">
+            <div class="pic" :style="{backgroundImage: `url(${song.imageURL})`}">
               <div class="pic-hover">
                 <div class="play" :style="{backgroundColor: color}">
                   <div class="play-sign"></div>
@@ -16,29 +16,41 @@
               </div>
             </div>
             <div class="txt">
-              <p style="font-size: 15px">song name</p>
-              <p style="font-size: 13px">song name</p>
+              <p style="font-size: 15px"><i class="fa fa-music"></i> {{song.title}}</p>
+              <p style="font-size: 13px"><i class="fa fa-user"></i> {{song.artist}}</p>
             </div>
           </div>
 
 
-          <div class="home-item-song">
-            <div class="pic">
-              <div class="pic-hover">
-                <div class="play" :style="{backgroundColor: color}">
-                  <div class="play-sign"></div>
-                </div>
-              </div>
-            </div>
-            <div class="txt">
-              <p style="font-size: 15px">song name</p>
-              <p style="font-size: 13px">song name</p>
-            </div>
-          </div>
 
         </div>
       </div>
 
+      <hr :style="{backgroundColor: color}">
+
+      <div class="home-item container " :style="{color: color}">
+        <h3>Albums</h3>
+        <div class="category container d-flex">
+          <div v-for="song in songs" class="home-item-song">
+            <div class="pic" :style="{backgroundImage: `url(${song.imageURL})`}">
+              <div class="pic-hover">
+                <div class="play" :style="{backgroundColor: color}">
+                  <div class="play-sign"></div>
+                </div>
+              </div>
+            </div>
+            <div class="txt">
+              <p style="font-size: 15px"><i class="fa fa-music"></i> {{song.title}}</p>
+              <p style="font-size: 13px"><i class="fa fa-user"></i> {{song.artist}}</p>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+<!--      <hr :style="{backgroundColor: color}">-->
     </div>
   </div>
 </template>
@@ -62,9 +74,57 @@
             isLiked: true,
             artist: 'Opeth',
             album: 'damnation',
-            imageURL: '',
+            imageURL: 'https://upload.wikimedia.org/wikipedia/en/1/16/Damnation_cover.jpg',
           },
-
+          {
+            title: 'Take me to church',
+            isLiked: true,
+            artist: 'Hozier',
+            album: 'damnation',
+            imageURL: 'https://images.genius.com/67a80685b84a3fe6a948511dc216767a.1000x1000x1.jpg',
+          },
+          {
+            title: 'windowpane',
+            isLiked: true,
+            artist: 'Opeth',
+            album: 'damnation',
+            imageURL: 'https://upload.wikimedia.org/wikipedia/en/1/16/Damnation_cover.jpg',
+          },
+          {
+            title: 'Take me to church',
+            isLiked: true,
+            artist: 'Hozier',
+            album: 'damnation',
+            imageURL: 'https://images.genius.com/67a80685b84a3fe6a948511dc216767a.1000x1000x1.jpg',
+          },
+          {
+            title: 'windowpane',
+            isLiked: true,
+            artist: 'Opeth',
+            album: 'damnation',
+            imageURL: 'https://upload.wikimedia.org/wikipedia/en/1/16/Damnation_cover.jpg',
+          },
+          {
+            title: 'Take me to church',
+            isLiked: true,
+            artist: 'Hozier',
+            album: 'damnation',
+            imageURL: 'https://images.genius.com/67a80685b84a3fe6a948511dc216767a.1000x1000x1.jpg',
+          },
+          {
+            title: 'windowpane',
+            isLiked: true,
+            artist: 'Opeth',
+            album: 'damnation',
+            imageURL: 'https://upload.wikimedia.org/wikipedia/en/1/16/Damnation_cover.jpg',
+          },
+          {
+            title: 'Take me to church',
+            isLiked: true,
+            artist: 'Hozier',
+            album: 'damnation',
+            imageURL: 'https://images.genius.com/67a80685b84a3fe6a948511dc216767a.1000x1000x1.jpg',
+          },
         ]
       }
     },
@@ -74,10 +134,11 @@
 <style scoped>
   .body {
     background-color: #202020;
-    padding: 10px;
+    padding: 10px 10px 100px 10px;
   }
   .category{
     /*display: grid;*/
+    overflow-x:auto ;
   }
   .header{
     text-align: center;
@@ -87,9 +148,25 @@
   }
   h1  {
     font-weight: bold;
+    cursor: default;
+  }
+  h3 {
+    cursor: default;
+    color: #bbbbbb;
   }
   .txt {
     text-align: center;
+
+  }
+  .txt p {
+    margin-bottom: 0;
+    color: #bbbbbb;
+    transition: .5s;
+    cursor: default;
+  }
+  .txt p:hover {
+    color: white;
+    transition: .5s;
   }
   .home-item-song{
     margin: 10px;
@@ -101,10 +178,14 @@
     width: 150px;
     border-radius: 50%;
     transition: all .5s;
+    background-position: center;
+    background-size: 150px 150px ;
+    background-repeat: no-repeat;
   }
   .home-item .home-item-song .pic:hover{
     box-shadow: 0 0 100px 0 #00000099 inset;
     transition: all .5s;
+    background-size: 180px 180px ;
   }
   .home-item .home-item-song .pic .pic-hover{
     opacity: 0;
@@ -150,7 +231,6 @@
     /*background-color: red;*/
     height: 60px;
     width: 60px;
-    border: solid white 2px;
     border-radius: 50%;
     position: relative;
   }

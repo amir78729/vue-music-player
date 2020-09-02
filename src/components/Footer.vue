@@ -5,15 +5,15 @@
         <input type="range" min="1" max="100" value="50" class="slider" id="timeline" :style="{borderColor: color}">
       </div>
         <div class="footer-items-demo" >
-          <p>{{currentSongName}} | {{currentSongArtist}}</p>
+          <p><i class="fa fa-music"></i> {{currentSongName}} | <i class="fa fa-user"></i> {{currentSongArtist}}</p>
         </div>
         <div class="footer-items-hover">
           <div class="container-fluid">
             <div class="song-info col-lg-3 col-md-3 col-sm-3 col-xs-2 row">
               <div :style="{backgroundImage:`url(${currentSongCover})`}" class="song-cover "></div>
               <div class="text">
-                <p style="font-size: 16px">{{ currentSongName }}</p>
-                <p style="font-size: 14px">{{ currentSongArtist }}</p>
+                <p style="font-size: 16px"><i class="fa fa-music"></i> {{ currentSongName }}</p>
+                <p style="font-size: 14px">  <i class="fa fa-user"></i>  {{ currentSongArtist }}</p>
               </div>
             </div>
             <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
@@ -83,6 +83,7 @@
     /*transition-delay:  0s;*/
   }
   .footer-empty .footer .footer-items-demo{
+    top: 0px;
     width: 100%;
     position: absolute;
     bottom: 30px;
@@ -96,6 +97,7 @@
   }
   .footer-empty:hover .footer .footer-items-demo{
     /*left: -50%;*/
+    top: -20px;
     opacity: 0;
     transform: rotateX(90deg);
     transition: all .5s ;
