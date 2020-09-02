@@ -116,23 +116,6 @@
     transition: all .5s ease-in-out;
   }
 
-
-  #shuffle{
-    background-image: url("../icons/png/021-shuffle.png");
-
-  }
-  #prev{
-    background-image: url("../icons/png/019-previous.png");
-  }
-  #play{
-    background-image: url("../icons/png/038-play-arrow.png");
-  }
-  #next{
-    background-image: url("../icons/png/020-skip.png");
-  }
-  #repeat{
-    background-image: url("../icons/png/027-repeat.png");
-  }
   .buttons {
     /*background-color: red;*/
 
@@ -228,7 +211,14 @@
   .song-info p {
     /*font-weight: bold;*/
     /*color: #5bc0de;*/
+    color: #bbbbbb;
     margin-bottom: 0;
+    cursor: default;
+    transition: .5s;
+  }
+  .song-info p:hover{
+    color: white;
+    transition: .5s;
   }
   .song-info .text {
     margin: 10px 5px 5px 5px;

@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import PlaylistPage from '../components/PlaylistPage'
-import center from '../components/center'
+import Center from '../components/center'
+import Songs from '../components/songs'
+import Chat from '../components/Chat'
+import Albums from '../components/Albums'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -14,7 +17,22 @@ export default new Router({
     },{
       path: '/',
       name: 'home',
-      component: center
+      component: Center
+    },
+    {
+      path: '/songs',
+      name: 'songs',
+      component: Songs
+    },
+    {
+      path: '/albums',
+      name: 'albums',
+      component: Albums,
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: Chat,
     },
   ]
 })

@@ -34,15 +34,34 @@
     <div class="accordion-panel">
      <router-link to="/playlist">
        <button id="playlists-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('playlists')" :class="{'selected': isPlaylists }">
-         <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
-         <i style="font-size: 15px" class="material-icons">playlist_play</i> Playlists</button>
+                 <div class="right-icon" >
+<!--                   <div :style="{backgroundColor: color}" class="line1"  ></div>-->
+<!--                   <div :style="{backgroundColor: color}" class="line2"></div>-->
+                   <div  class="line1"  ></div>
+                   <div  class="line2"></div>
+                 </div>
+<!--         <div class="add-playlist">-->
+<!--            Add-->
+<!--         </div>-->
+         <i style="font-size: 15px" class="material-icons">playlist_play</i>
+         Playlists
+         </button>
      </router-link>
-      <div id="playlists" class="">
-        <ul class="" style="margin: 0; padding: 0">
-          <button class="btn  item" v-for="playlist in playlists">{{ playlist }}</button>
-        </ul>
-      </div>
+<!--      <div id="playlists" class="">-->
+<!--        <ul class="" style="margin: 0; padding: 0">-->
+<!--          <button class="btn  item" v-for="playlist in playlists">{{ playlist }}</button>-->
+<!--        </ul>-->
+<!--      </div>-->
     </div>
+
+    <div class="accordion-panel">
+      <router-link to="/chat">
+        <button id="chat-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('chats')" :class="{'selected': isChat }">
+          <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+          <i style="font-size: 13px" class="material-icons">chat</i> Chat</button>
+      </router-link>
+    </div>
+
   </div>
 </template>
 
@@ -56,6 +75,7 @@
         isSongs: false,
         isAlbums: false,
         isPlaylists: false,
+        isChat: false,
         playlists: ['playlist 1','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2'],
       }
     },
@@ -67,25 +87,37 @@
           this.isSongs = false;
           this.isAlbums = false;
           this.isPlaylists = false;
+          this.isChat = false;
           this.$emit('homeSelected')
-        } else  if (page === 'songs'){
+        }   if (page === 'songs'){
           this.isHome = false;
           this.isSongs = true;
           this.isAlbums = false;
           this.isPlaylists = false;
+          this.isChat = false;
           this.$emit('songsSelected')
         } if (page === 'albums'){
           this.isHome = false;
           this.isSongs = false;
           this.isAlbums = true;
           this.isPlaylists = false;
+          this.isChat = false;
           this.$emit('albumsSelected')
         } if (page === 'playlists'){
           this.isHome = false;
           this.isSongs = false;
           this.isAlbums = false;
           this.isPlaylists = true;
+          this.isChat = false;
           this.$emit('playlistsSelected')
+        }
+        if (page === 'chats'){
+          this.isHome = false;
+          this.isSongs = false;
+          this.isAlbums = false;
+          this.isPlaylists = false;
+          this.isChat = true;
+          this.$emit('chatsSelected')
         }
 
       }
@@ -109,15 +141,70 @@
     box-shadow: 0 0 0 0 inset;
   }
   .selected {
-    background-image: linear-gradient(to right, #202020, #202020);
-    border-left: solid  2px;
-    transition: all .4s;
-  }
-  .selected:hover {
     background-image: linear-gradient(to right, #252525, #202020);
     border-left: solid  2px;
     transition: all .4s;
   }
+  .selected:hover {
+    background-image: linear-gradient(to right, #272727, #202020);
+    border-left: solid  2px;
+    transition: all .4s;
+  }
+  .selected .right-icon {
+    background-color: transparent;
+    border-radius: 50%;
+  }
+  .selected:hover .right-icon {
+    rotation: 15deg;
+    background-color: #bbbbbb;
+    box-shadow: 0 0 0 2px #bbbbbb ;
+  }
+  .selected:hover .right-icon:hover {
+    rotation: 15deg;
+    background-color: white;
+    box-shadow: 0 0 0 2px white ;
+  }
+  .selected .right-icon .line2,.line1{
+    background-color: #202020;
+    rotation: 50deg;
+  }
+  .selected:hover .right-icon .line2,.line1{
+    background-color: #202020;
+  }
+
+
+  .selected .right-icon .line2{
+    position: absolute;
+    top: 5px;
+    background-color: #202020;
+    height: 0;
+    transform: rotate(45deg);
+  }
+  .selected .right-icon .line1{
+    position: absolute;
+    top: 5px;
+    background-color: #202020;
+    height: 0;
+    transform: rotate(-45deg);
+  }
+  .selected:hover .right-icon .line1{
+    rotation-point: 6px 6px;
+    background-color: #202020;
+    transform: rotate(0deg);
+    height: 10px;
+    top:1px
+  }
+  .selected:hover .right-icon .line2{
+
+    top: 1px;
+    rotation-point: 6px 6px;
+    background-color: #202020;
+    transform: rotate(90deg);
+    height: 10px;
+  }
+
+
+
   .active, .accordion:hover {
     background-color: #232323;
     color: white;
@@ -139,17 +226,19 @@
     background-color: white;
     overflow: hidden;
     transition: all .4s;
-
   }
 
   .right-icon {
+    position: absolute;
+    right: 20px;
+    top: 22px;
     height: 12px;
     width: 12px;
-    position: relative;
-    float: right;
+    /*position: relative;*/
+    /*float: right;*/
     justify-content: center;
+    /*border-radius: 50%;*/
     transition: all .4s;
-
   }
   .right-icon .line1{
     position: absolute;
@@ -206,6 +295,41 @@
     text-align: left;
     box-shadow: 0 0 0 0 #5bc0de inset;
     transition: all .5s;
+  }
+
+  #playlists-button{
+    position: relative;
+  }
+  #playlists-button .add-playlist{
+    position: absolute;
+    /*float: right;*/
+    top: 20px;
+    right: 20px;
+    background-color: #5bc0de;
+    height: 20px;
+    width: 50px;
+    transition: all .5s;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    cursor: default;
+  }
+
+  #playlists-button:hover .add-playlist{
+    position: absolute;
+    /*float: right;*/
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    height: 20px;
+    width: 50px;
+    transition: all .5s;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    cursor: default;
   }
   .item:hover {
     background-color: #404040;

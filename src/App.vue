@@ -146,18 +146,12 @@
   #center {
     /*height: calc(100vh - 130px);*/
     /*height: 80vh;*/
+    background-color: #202020;
     height: calc(100vh - 60px);
     overflow: auto;
     width: 60%;
   }
 
-  #center:after {
-    /*content: '';*/
-    /*display: block;*/
-    /*overflow: auto;*/
-    /*clear: both;*/
-    /*height: 0;*/
-  }
   #south {
     width: 100%;
     /*height: 80px;*/
