@@ -75,7 +75,7 @@
 
   .footer-empty .footer .footer-items-hover{
 
-    margin-top: 100px;
+    /*margin-top: 100px;*/
     opacity: 0;
     transition: all .5s ease-in-out;
     transform: rotateX(-70deg);

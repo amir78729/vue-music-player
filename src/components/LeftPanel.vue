@@ -6,29 +6,37 @@
 <!--    {{isPlaylists}}-->
 
     <div class="accordion-panel">
-      <button id="home-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('home')" :class="{'selected': isHome }">
-<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
-        <i style="font-size: 15px" class="material-icons">home</i> Home
-      </button>
+      <router-link to="/">
+        <button id="home-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('home')" :class="{'selected': isHome }">
+          <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+          <i style="font-size: 15px" class="material-icons">home</i> Home
+        </button>
+      </router-link>
     </div>
 
     <div class="accordion-panel">
-      <button id="songs-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('songs')" :class="{'selected': isSongs }">
-<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
-        <i style="font-size: 15px" class="material-icons">library_music</i> Songs
-      </button>
+      <router-link to="/songs">
+        <button id="songs-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('songs')" :class="{'selected': isSongs }">
+          <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+          <i style="font-size: 15px" class="material-icons">library_music</i> Songs
+        </button>
+      </router-link>
     </div>
 
     <div class="accordion-panel">
-      <button id="albums-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('albums')" :class="{'selected': isAlbums }">
-<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
-        <i style="font-size: 15px" class="material-icons">album</i> Albums</button>
+      <router-link to="/album">
+        <button id="albums-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('albums')" :class="{'selected': isAlbums }">
+          <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+          <i style="font-size: 15px" class="material-icons">album</i> Albums</button>
+      </router-link>
     </div>
 
     <div class="accordion-panel">
-      <button id="playlists-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('playlists')" :class="{'selected': isPlaylists }">
-<!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
-        <i style="font-size: 15px" class="material-icons">playlist_play</i> Playlists</button>
+     <router-link to="/playlist">
+       <button id="playlists-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('playlists')" :class="{'selected': isPlaylists }">
+         <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
+         <i style="font-size: 15px" class="material-icons">playlist_play</i> Playlists</button>
+     </router-link>
       <div id="playlists" class="">
         <ul class="" style="margin: 0; padding: 0">
           <button class="btn  item" v-for="playlist in playlists">{{ playlist }}</button>
