@@ -57,7 +57,7 @@
     data(){
       return{
         colors: colors,
-        currentColor: colors.red,
+        currentColor: colors.blue,
         currentPage: '',
         friends: friends,
         currentContact: 0,

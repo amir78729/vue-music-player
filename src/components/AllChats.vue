@@ -20,7 +20,8 @@
             <div class="picture" :style="{backgroundImage: `url(${friend.image})`}"></div>
           </td>
           <td>{{ friend.name }}</td>
-          <td>online</td>
+          <td class="green" v-if="friend.isOnline">online</td>
+          <td class="red" v-else>offline</td>
           <td>
             <router-link to="/chat">
               <button @click="goToChat(index)" :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 15px" class="material-icons">chat</i><span class="chat-text">Chat!</span></button>
@@ -177,5 +178,31 @@
     padding: 10px;
     /*height: 67vh;*/
     overflow: auto;
+  }
+  .red{
+    /*height: 10px;*/
+    /*width: 10px;*/
+    /*background-color: darkred;*/
+    /*margin: 8px 5px auto 5px;*/
+    /*border-radius: 50%;*/
+    color: red;
+    opacity: .5;
+  }
+  .green{
+    /*height: 10px;*/
+    /*width: 10px;*/
+    /*background-color: darkgreen;*/
+    /*margin: 8px 5px auto 5px;*/
+    /*border-radius: 50%;*/
+    color: green;
+    opacity: .5;
+  }
+  .green:hover{
+    opacity: 1;
+    transition: .5s;
+  }
+  .red:hover{
+    opacity: 1;
+    transition: .5s;
   }
 </style>

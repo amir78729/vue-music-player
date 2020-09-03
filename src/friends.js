@@ -2,17 +2,17 @@ export var friends = [
   {
     name: 'hamid nemati',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751000886549151744/20200903_131849.jpg',
-    isOnline: false,
+    isOnline: true,
     currentListening: 'Pounez',
   },{
     name: 'amirhossein',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751001986337472613/20200903_132322.jpg',
-    isOnline: false,
+    isOnline: true,
     currentListening: 'Windowpane',
   },{
     name: 'neginhsobhani',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751001268637663302/20200903_132038.jpg',
-    isOnline: false,
+    isOnline: true,
     currentListening: 'Still Loving you',
   },{
     name: 'mhassan1378',
@@ -22,7 +22,7 @@ export var friends = [
   },{
     name: 'mohammad_mr8',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751034502305808385/IMG_20200903_153248_894.jpg',
-    isOnline: false,
+    isOnline: true,
     currentListening: 'Matarsak',
   },{
     name: 'Rozhin Sattarpour',
@@ -32,7 +32,7 @@ export var friends = [
   },{
     name: 'elem99',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751080769581219920/unknown.png',
-    isOnline: false,
+    isOnline: true,
     currentListening: 'How you like that',
   },
 ];
