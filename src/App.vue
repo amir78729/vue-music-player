@@ -6,7 +6,6 @@
 <!--    <button @click="changeColor('green')" >green</button>-->
 <!--    <button @click="changeColor('purple')" >purple</button>-->
 
-<!--    <p>{{currentPage}}</p>-->
 
     <div id="north"><app-header @colorChanged="changeColor($event)" :color="currentColor"></app-header></div >
 <!--    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>-->
@@ -21,8 +20,11 @@
         :color="this.currentColor"></app-left-panel></div>
 
 <!--      <div id="center" class=""><app-playlist-page :color="this.currentColor"></app-playlist-page></div>-->
-      <div id="center" class=""><router-view :color="this.currentColor"></router-view></div>
-      <div class="side " id="east"><app-right-panel :color="this.currentColor"></app-right-panel></div>
+      <div id="center" class="">
+        <router-view
+          :color="this.currentColor"
+          :contactIndex="currentContact"></router-view></div>
+      <div class="side " id="east"><app-right-panel :color="this.currentColor" @goToChat="changeCurrentContact($event)"></app-right-panel></div>
     </div>
     <div id="south"><app-footer :color="this.currentColor"></app-footer></div>
 
@@ -39,6 +41,7 @@
   import Center from "./components/Center.vue"
   import PlaylistPage from "./components/PlaylistPage.vue"
   import {colors} from "./colors";
+  import {friends} from "./friends";
 
   export default {
     components:{
@@ -54,11 +57,15 @@
       return{
         colors: colors,
         currentColor: colors.red,
-        currentPage: ''
+        currentPage: '',
+        friends: friends,
+        currentContact: 0,
 
       }
     },methods: {
-      // change
+      changeCurrentContact(index){
+        this.currentContact = index;
+      },
       changeColor(color){
         if (color === 'red'){
           this.currentColor = this.colors.red

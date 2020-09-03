@@ -12,7 +12,9 @@
           <div class="friend-info">
             <p :style="{color:color}"> <i style="font-size: 12px" class="material-icons">people</i> {{friend.name}}</p>
             <p style="margin-top: -20px; color: #bbbbbb; font-size: 14px"><i style="font-size: 10px" class="material-icons">headset</i> song name</p>
-            <button :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 10px" class="material-icons">chat</i><span class="chat-text">Chat!</span></button>
+            <router-link to="/chat">
+              <button @click="goToChat(index)" :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 10px" class="material-icons">chat</i><span class="chat-text">Chat!</span></button>
+            </router-link>
             <button :style="{backgroundColor: color}" class="btn listen-along"><i style="font-size: 10px" class="material-icons">headset</i><span class="chat-text">Listen!</span></button>
           </div>
 
@@ -32,8 +34,12 @@
         return {
           friends: friends,
         }
-      },
+      },methods: {
+      goToChat(index){
+        this.$emit('goToChat', index);
+      }
     }
+  }
 </script>
 
 <style scoped>
