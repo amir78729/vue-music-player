@@ -1,9 +1,10 @@
 <template>
-  <div class="footer-empty" :style="{color: color, borderColor: color}">
-    <div class="footer ">
-      <div style="position: absolute; top:  -18px; width: 100%;">
-        <input type="range" min="1" max="100" value="50" class="slider" id="timeline" :style="{borderColor: color}">
-      </div>
+  <div class="body">
+    <div class="footer-empty" :style="{color: color, borderColor: color}">
+      <div class="footer ">
+        <div style="position: absolute; top:  -18px; width: 100%;">
+          <input type="range" min="1" max="100" value="50" class="slider" id="timeline" :style="{borderColor: color}">
+        </div>
         <div class="footer-items-demo" >
           <p><i style="font-size: 15px" class="material-icons">music_note</i> {{currentSongName}} | <i style="font-size: 15px" class="material-icons">people</i> {{currentSongArtist}}</p>
         </div>
@@ -17,11 +18,11 @@
               </div>
             </div>
             <div class="buttons container align-content-center col-lg-6 col-md-8 col-sm-8 col-xs-8" align="center">
-<!--              <button class="btn" id="shuffle":style="{borderColor: color, boxShadow: color }"></button>-->
-<!--              <button class="btn" id="prev"   :style="{borderColor: color, boxShadow: color }"></button>-->
-<!--              <button class="btn" id="play"   :style="{borderColor: color, boxShadow: color }"></button>-->
-<!--              <button class="btn" id="next"   :style="{borderColor: color, boxShadow: color }"></button>-->
-<!--              <button class="btn" id="repeat" :style="{borderColor: color, boxShadow: color }"></button>-->
+              <!--              <button class="btn" id="shuffle":style="{borderColor: color, boxShadow: color }"></button>-->
+              <!--              <button class="btn" id="prev"   :style="{borderColor: color, boxShadow: color }"></button>-->
+              <!--              <button class="btn" id="play"   :style="{borderColor: color, boxShadow: color }"></button>-->
+              <!--              <button class="btn" id="next"   :style="{borderColor: color, boxShadow: color }"></button>-->
+              <!--              <button class="btn" id="repeat" :style="{borderColor: color, boxShadow: color }"></button>-->
               <button class="btn"  :style="{borderColor: color, boxShadow: color , color: color}"><i style="text-align: center ;font-size: 30px ;margin-top: 2px; margin-left: -4px" class="material-icons">shuffle</i></button>
               <button class="btn"  :style="{borderColor: color, boxShadow: color , color: color}"><i style="text-align: center ;font-size: 30px ;margin-top: 2px; margin-left: -4px" class="material-icons">skip_previous</i></button>
               <button class="btn"  :style="{borderColor: color, boxShadow: color , color: color}"><i style="text-align: center ;font-size: 30px ;margin-top: 2px; margin-left: -4px" class="material-icons">play_arrow</i></button>
@@ -31,6 +32,7 @@
             <div class="col-lg-3 col-md-2 col-sm-1 col-xs-2" style="float: right; position: relative">
               <footer-volume></footer-volume>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -58,18 +60,28 @@
 </script>
 
 <style scoped>
-  .footer-empty{
+  .body {
+    background-color: white;
+    /*height: 10px;*/
     position: relative;
+
+  }
+  .footer-empty{
+    width: 100%;
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    padding-top: -300px;
   }
   .footer-empty .footer{
-    bottom: -40px;
+    bottom: -20px;
     background-color: #222222;
     /*transition-delay:  1s;*/
   }
   .footer-empty:hover .footer{
     background-color: #191919;
     box-shadow: 0 0 20px 0 #00000052 ;
-    bottom: 0;
+    bottom: 15px;
     /*transition-delay:  0s;*/
   }
 

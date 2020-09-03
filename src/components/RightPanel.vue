@@ -2,7 +2,7 @@
     <div class="" style="position: relative; padding-bottom: 50px" >
 
       <div class="display-1 title" :style="{color:color}">
-        <h1>Friend Activity</h1>
+        <h1 style="margin-left: 10px"><i style="font-size: 16px" class="material-icons">people</i> Friend Activity</h1>
       </div>
 
       <div class="friend-activity">
@@ -41,11 +41,14 @@
     margin: 0px 0px;
     z-index: 300;
     position: fixed;
-    background-color: #151515;
+    /*background-color: #151515;*/
+    background-image: linear-gradient(to bottom, #151515,#151515, transparent);
     width: 100%;
+    height: 40px;
   }
-  p,h2{
+  p,h1{
     cursor: default;
+    transition: .5s;
   }
   h1 {
     font-size: 20px;

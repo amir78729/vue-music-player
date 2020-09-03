@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div class="body">
+    <div class="chat-area">
+
+    </div>
+
     <div class="footer-input ">
       <div class="">
         <input type="text" >
@@ -19,10 +23,32 @@
 </script>
 
 <style scoped>
-  .footer-input{
+  .body {
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 70px;
+    height: 100%;
+    width: 95%;
     position: relative;
     background-color: #181818;
+  }
+  .chat-area{
+    position: absolute;
+    height: calc(100% - 120px);
+    /*height: 100px;*/
+    top: 20px;
+    background-color: #252525;
+    width: 100%;
+  }
+  .footer-input{
+    /*position: fixed;*/
+    bottom: 50px;
+    width: 100%;
+    position: absolute;
+    background-color: #181818;
     height: 50px;
+    /*z-index: 200;*/
   }
   .send{
     position: absolute;

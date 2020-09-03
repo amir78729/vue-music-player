@@ -338,4 +338,8 @@
     transition: all .5s;
   }
 
+  #chat-button.selected{
+    background-image: linear-gradient(to right, #252525, #181818);;
+  }
+
 </style>

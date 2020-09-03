@@ -147,7 +147,7 @@
   #center {
     /*height: calc(100vh - 130px);*/
     /*height: 80vh;*/
-    background-color: #202020;
+    background-color: #181818;
     height: calc(100vh - 60px);
     overflow: auto;
     width: 60%;
