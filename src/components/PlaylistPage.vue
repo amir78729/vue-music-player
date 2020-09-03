@@ -160,7 +160,7 @@
     width: 100%;
   }
   tr {
-    color: #bbbbbb;
+    color: #777777;
     background-color: #202020;
 
   }

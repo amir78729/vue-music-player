@@ -11,7 +11,7 @@
           <div class="picture" :style="{backgroundImage: `url(${friend.image})`}"></div>
           <div class="friend-info">
             <p :style="{color:color}"> <i style="font-size: 12px" class="material-icons">people</i> {{friend.name}}</p>
-            <p style="margin-top: -20px; color: #bbbbbb; font-size: 14px"><i style="font-size: 10px" class="material-icons">headset</i> song name</p>
+            <p style="margin-top: -20px; color: #777777; font-size: 14px"><i style="font-size: 10px" class="material-icons">headset</i> song name</p>
             <router-link to="/chat">
               <button @click="goToChat(index)" :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 10px" class="material-icons">chat</i><span class="chat-text">Chat!</span></button>
             </router-link>

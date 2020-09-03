@@ -128,7 +128,7 @@
 <style>
   .accordion {
     background-color: #252525;
-    color: #BBBBBB;
+    color: #777777;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -156,8 +156,8 @@
   }
   .selected:hover .right-icon {
     rotation: 15deg;
-    background-color: #bbbbbb;
-    box-shadow: 0 0 0 2px #bbbbbb ;
+    background-color: #777777;
+    box-shadow: 0 0 0 2px #777777 ;
   }
   .selected:hover .right-icon:hover {
     rotation: 15deg;

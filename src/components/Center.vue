@@ -2,11 +2,11 @@
   <div class="container-fluid body">
     <div class="center">
       <div class="header container " :style="{color: color}">
-        <h1>Home</h1>
+        <h1><i style="font-size: 30px" class="material-icons">home</i> Home</h1>
       </div>
       <div class="home-item container " :style="{color: color}">
         <div class="subtitle d-flex">
-          <h3>Songs</h3>
+          <h3><i style="font-size: 20px" class="material-icons">music_note</i> Songs</h3>
           <router-link to="/songs"><button>  . . .</button></router-link>
         </div>
         <div class="category container d-flex">
@@ -33,7 +33,7 @@
 
       <div class="home-item container " :style="{color: color}">
         <div class="subtitle d-flex">
-          <h3>Albums</h3>
+          <h3><i style="font-size: 20px" class="material-icons">album</i> Albums</h3>
           <router-link to="/albums"><button>  . . .</button></router-link>
         </div>
         <div class="category container d-flex">
@@ -154,7 +154,7 @@
     transition: all .5s;
     cursor: pointer;
     background-color: transparent;
-    color: #BBBBBB;
+    color: #777777;
     box-shadow: 0 0 0 0 #00000000;
     border: none;
     outline: none;
@@ -191,7 +191,7 @@
   }
   h3 {
     cursor: default;
-    color: #bbbbbb;
+    color: #777777;
   }
   .txt {
     text-align: center;
@@ -199,7 +199,7 @@
   }
   .txt p {
     margin-bottom: 0;
-    color: #bbbbbb;
+    color: #777777;
     transition: .5s;
     cursor: default;
   }

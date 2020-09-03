@@ -5,6 +5,7 @@ import Center from '../components/center'
 import Songs from '../components/songs'
 import Chat from '../components/Chat'
 import Albums from '../components/Albums'
+import AllChats from "../components/AllChats";
 
 Vue.use(Router);
 
@@ -33,6 +34,11 @@ export default new Router({
       path: '/chat',
       name: 'chat',
       component: Chat,
+    },
+    {
+      path: '/all-chats',
+      name: 'all-chats',
+      component: AllChats,
     },
   ]
 })

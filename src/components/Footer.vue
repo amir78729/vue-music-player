@@ -223,7 +223,7 @@
   .song-info p {
     /*font-weight: bold;*/
     /*color: #5bc0de;*/
-    color: #bbbbbb;
+    color: #777777;
     margin-bottom: 0;
     cursor: default;
     transition: .5s;

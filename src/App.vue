@@ -186,13 +186,15 @@
   }
   /* width */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;;
+    width: 5px;
+    height: 5px;
+    transition: .5s;
   }
 
   /* Track */
   ::-webkit-scrollbar-track {
     background-color: #252525;
+    transition: .5s;
     /*box-shadow: inset 0 0 5px grey;*/
     /*border-radius: 10px;*/
   }
@@ -200,11 +202,13 @@
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #333333;
+    transition: .5s;
     /*border-radius: 10px;*/
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #353535;
+    transition: .5s;
   }
 </style>

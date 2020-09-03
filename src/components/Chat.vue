@@ -2,9 +2,12 @@
   <div class="body">
     <div class="chat-area">
       <div class="chat-title d-flex">
+        <router-link to="/all-chats">
+          <i class="material-icons back">arrow_back</i>
+        </router-link>
         <div class="pic" :style="{backgroundImage: `url(${friends[contactIndex].image})`}"></div>
         <div class="info">
-          <p :style="{color : color}" style="font-size: 30px">{{friends[contactIndex].name}}</p>
+          <p :style="{color : color}" style="font-size: 20px;transition: .5s;">{{friends[contactIndex].name}}</p>
           <p class="status">online</p>
         </div>
 
@@ -15,7 +18,7 @@
       <div class="">
         <input type="text" >
       </div>
-      <button class="send" :style="{backgroundColor:color}">
+      <button class="send" :style="{color:color}">
         <i style="font-size: 15px" class="material-icons">send</i>
       </button>
     </div>
@@ -43,16 +46,27 @@
     margin: 0 auto;
     padding-bottom: 0px;
     height: 100%;
-    width: calc(100% - 10px);
+    width: calc(100% - 0px);
     position: relative;
     background-color: #181818;
   }
+  .back{
+    color: #777777;
+    margin:  auto 10px auto 0 ;
+    cursor: pointer;
+    transition: .5s;
+  }
+  .back:hover{
+    color: white;
+    transition: .5s;
+  }
   .chat-title{
-    background-image: linear-gradient(to right, #202020, #222222);
+    background-image: linear-gradient(to right, #222222, #303030);
     height: 80px;
-    border-radius: 20px 20px 0px 0px;
+    /*border-radius: 20px 20px 0px 0px;*/
     padding: 10px;
   }
+
   .chat-title .pic{
     background-color: white;
     border-radius: 50%;
@@ -68,26 +82,34 @@
   }
   .chat-area{
     position: absolute;
-    height: calc(100% - 110px);
-    margin: 0 5px;
+    height: calc(100% - 85px);
+    margin: 0 0px;
     /*height: 100px;*/
-    top: 10px;
-    background-color: #252525;
-    width: calc(100% - 10px);
-    border-radius: 20px;
+    top: 0px;
+    background-image: linear-gradient(to bottom, #050505, #151515);
+    /*width: calc(100% - 0px);*/
+    width:100%;
+    /*border-radius: 20px;*/
   }
   .footer-input{
     /*position: fixed;*/
-    bottom: 45px;
+    bottom: 35px;
     width: 100%;
     position: absolute;
-    background-color: #181818;
+    background-color: #252525;
     height: 50px;
+    box-shadow: 0 0 20px 0 #00000000 ;
+    transition: .5s;
     /*z-index: 200;*/
   }
+  .footer-input:hover {
+    box-shadow: 0 0 20px 0 #00000099 ;
+    transition: .5s;
+  }
   .info {
-    margin-top: -5px;
+    margin-top: 2px;
     margin-left: 10px;
+    cursor: default;
   }
   .info p{
     margin-bottom: -8px;
@@ -97,9 +119,10 @@
   }
   .send{
     position: absolute;
-    right: 5px;
+    background-color: transparent;
+    right: 0px;
     top: 5px;
-    color: white;
+    /*color: white;*/
     border-radius: 50%;
     border: none;
     height: 40px;
@@ -109,22 +132,27 @@
   }
   .send:hover{
     transition: .5s;
-    box-shadow: 0 0 0 40px #00000033 inset;
+    /*box-shadow: 0 0 0 40px #00000011 inset;*/
+    text-shadow: 0 0px 5px black;
+  }
+  .send:focus{
+    outline: none;
   }
   input {
     width: calc(100% - 55px);
+    /*width: 100%;*/
     height: 40px;
     position: absolute;
-    border-radius: 20px;
-    left: 5px;
+    /*border-radius: 20px;*/
+    left: 20px;
     top: 5px;
     border: none;
-    background-color: #222222;
-    color: #bbbbbb;
+    background-color: transparent;
+    color: #777777;
     transition: .5s;
   }
   input:hover {
-    background-color: #252525;
+    /*background-color: #252525;*/
     transition: .5s;
   }
   input:focus {
