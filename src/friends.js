@@ -11,5 +11,14 @@ export var friends = [
   },{
     name: 'mhassan1378',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751019116835504148/20200903_143127.jpg',
+  },{
+    name: 'mohammad_mr8',
+    image: 'https://cdn.discordapp.com/attachments/732234196487241741/751034502305808385/IMG_20200903_153248_894.jpg',
+  },{
+    name: 'Rozhin Sattarpour',
+    image: 'https://cdn.discordapp.com/attachments/732234196487241741/751035755731877938/20200903_153735.jpg',
+  },{
+    name: 'mohammad_mr8',
+    image: 'https://cdn.discordapp.com/attachments/732234196487241741/751034502305808385/IMG_20200903_153248_894.jpg',
   },
 ];

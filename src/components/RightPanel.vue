@@ -1,7 +1,9 @@
 <template>
-    <div class="">
+    <div class="" style="position: relative; padding-bottom: 50px" >
 
-      <h1 class="display-1" :style="{color:color}">Friend Activity</h1>
+      <div class="display-1 title" :style="{color:color}">
+        <h1>Friend Activity</h1>
+      </div>
 
       <div class="friend-activity">
 
@@ -35,14 +37,23 @@
 </script>
 
 <style scoped>
-  p{
+  .title {
+    margin: 0px 0px;
+    z-index: 300;
+    position: fixed;
+    background-color: #151515;
+    width: 100%;
+  }
+  p,h2{
     cursor: default;
   }
   h1 {
     font-size: 20px;
-    text-align: center;
   }
-  .friend-activity{}
+
+  .friend-activity{
+    padding-top: 25px;
+  }
   .friend{
     transition: all .5s;
     height: 80px;
