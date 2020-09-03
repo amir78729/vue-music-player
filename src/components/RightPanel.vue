@@ -11,6 +11,7 @@
             <p :style="{color:color}"> <i style="font-size: 12px" class="material-icons">people</i> {{friend.name}}</p>
             <p style="margin-top: -20px; color: #bbbbbb; font-size: 14px"><i style="font-size: 10px" class="material-icons">headset</i> song name</p>
             <button :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 10px" class="material-icons">chat</i><span class="chat-text">Chat!</span></button>
+            <button :style="{backgroundColor: color}" class="btn listen-along"><i style="font-size: 10px" class="material-icons">headset</i><span class="chat-text">Listen!</span></button>
           </div>
 
         </div>
@@ -57,6 +58,17 @@
     transition: .3s;
     opacity: 1;
   }
+
+  .friend .listen-along{
+    transition: .3s;
+    opacity: 0;
+  }
+
+  .friend:hover .listen-along{
+    transition: .3s;
+    opacity: 1;
+  }
+
   .friend:hover {
     transition: all .5s;
     background-image: linear-gradient(to right, #222222, #181818);
@@ -116,6 +128,44 @@
     transition: .3s;
   }
   .chat:hover .chat-text{
+    color: white;
+    transition: .3s;
+    left: 20px;
+  }
+  /*****************************************************/
+  .listen-along {
+    position: relative;
+    text-align: left;
+    margin-top: -36px;
+    font-size: 10px;
+    color: white;
+    height: 20px;
+    width: 20px;
+    outline: none;
+    border: none;
+    padding: 2px 0 0 0;
+    border-radius: 10px;
+    box-shadow: 0 0 200px 0 #00000000 inset;
+  }
+  .listen-along:hover {
+
+    width: 60px;
+    box-shadow: 0 0 200px 0 #00000055 inset;
+  }
+  .listen-along i{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  .listen-along .chat-text{
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    color: transparent;
+    transition: .3s;
+    font-size: 10px;
+  }
+  .listen-along:hover .chat-text{
     color: white;
     transition: .3s;
     left: 20px;
