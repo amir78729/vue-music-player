@@ -55,7 +55,7 @@
     </div>
 
     <div class="accordion-panel">
-      <router-link to="/chat">
+      <router-link to="/all-chats">
         <button id="chat-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('chats')" :class="{'selected': isChat }">
           <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
           <i style="font-size: 13px" class="material-icons">chat</i> Chat</button>

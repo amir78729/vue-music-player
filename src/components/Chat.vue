@@ -2,9 +2,11 @@
   <div class="body">
     <div class="chat-area">
       <div class="chat-title d-flex">
-        <router-link to="/all-chats">
+        <router-link to="/all-chats" class="back">
+
           <i class="material-icons back">arrow_back</i>
         </router-link>
+
         <div class="pic" :style="{backgroundImage: `url(${friends[contactIndex].image})`}"></div>
         <div class="info">
           <p :style="{color : color}" style="font-size: 20px;transition: .5s;">{{friends[contactIndex].name}}</p>
@@ -52,7 +54,7 @@
   }
   .back{
     color: #777777;
-    margin:  auto 10px auto 0 ;
+    margin:  auto 5px auto 0px ;
     cursor: pointer;
     transition: .5s;
   }

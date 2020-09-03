@@ -99,7 +99,7 @@
     box-shadow: none;
   }
   .header{
-    background-color: #222222;
+    background-color: #181818;
     height: 60px;
   }
   .search{

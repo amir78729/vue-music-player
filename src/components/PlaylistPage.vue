@@ -111,7 +111,7 @@
   .body {
 
     background-color: #202020;
-    padding: 10px 10px 100px 10px;
+    padding: 10px 10px 20px 10px;
   }
   .playlist-info h1,p{
     /*color: #5bc0de;*/

@@ -23,7 +23,8 @@
       <div id="center" class="">
         <router-view
           :color="this.currentColor"
-          :contactIndex="currentContact"></router-view></div>
+          :contactIndex="currentContact"
+          @goToChat="changeCurrentContact($event)"></router-view></div>
       <div class="side " id="east"><app-right-panel :color="this.currentColor" @goToChat="changeCurrentContact($event)"></app-right-panel></div>
     </div>
     <div id="south"><app-footer :color="this.currentColor"></app-footer></div>
