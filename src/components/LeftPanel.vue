@@ -165,25 +165,25 @@
     box-shadow: 0 0 0 2px white ;
   }
   .selected .right-icon .line2,.line1{
-    background-color: #202020;
+    /*background-color: #202020;*/
     rotation: 50deg;
   }
   .selected:hover .right-icon .line2,.line1{
-    background-color: #202020;
+    /*background-color: #202020;*/
   }
 
 
   .selected .right-icon .line2{
     position: absolute;
     top: 5px;
-    background-color: #202020;
+    background-color: #20202000;
     height: 0;
     transform: rotate(45deg);
   }
   .selected .right-icon .line1{
     position: absolute;
     top: 5px;
-    background-color: #202020;
+    background-color: #20202000;
     height: 0;
     transform: rotate(-45deg);
   }

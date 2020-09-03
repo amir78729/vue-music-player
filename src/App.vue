@@ -95,6 +95,7 @@
   #app {
     min-height: 100%;
     min-width: 100%;
+    /*font-family: 'Mako'*/
   }
   /*************************************************************************************************************/
   /*div { border : 1px solid black }*/
@@ -175,5 +176,28 @@
   #north:hover{
     box-shadow: 0 0 20px 0 #00000052 ;
     transition: .2s;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #252525;
+    /*box-shadow: inset 0 0 5px grey;*/
+    /*border-radius: 10px;*/
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #333333;
+    /*border-radius: 10px;*/
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #353535;
   }
 </style>

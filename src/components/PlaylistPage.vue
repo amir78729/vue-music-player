@@ -20,8 +20,8 @@
         <tbody class="">
         <tr v-for="(row, index) in data">
           <td>{{ index + 1 }}</td>
-          <td v-if="row.isLiked">Y</td>
-          <td v-else>N</td>
+          <td v-if="row.isLiked"><i style="font-size: 15px" class="material-icons">favorite</i></td>
+          <td v-else><i style="font-size: 15px" class="material-icons">favorite_outline</i></td>
           <td>{{ row.title }}</td>
           <td>{{ row.artist }}</td>
           <td>{{ row.album }}</td>
@@ -119,6 +119,7 @@
 
   }
   .playlist-info{
+    cursor: default;
     transition: all 0.5s;
     horiz-align: center;
     justify-content: center;

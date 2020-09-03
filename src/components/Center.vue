@@ -5,7 +5,10 @@
         <h1>Home</h1>
       </div>
       <div class="home-item container " :style="{color: color}">
-        <h3>Songs</h3>
+        <div class="subtitle d-flex">
+          <h3>Songs</h3>
+          <router-link to="/songs"><button>  . . .</button></router-link>
+        </div>
         <div class="category container d-flex">
           <div v-for="song in songs" class="home-item-song">
             <div class="pic" :style="{backgroundImage: `url(${song.imageURL})`}">
@@ -29,7 +32,10 @@
       <hr :style="{backgroundColor: color}">
 
       <div class="home-item container " :style="{color: color}">
-        <h3>Albums</h3>
+        <div class="subtitle d-flex">
+          <h3>Albums</h3>
+          <router-link to="/albums"><button>  . . .</button></router-link>
+        </div>
         <div class="category container d-flex">
           <div v-for="song in songs" class="home-item-song">
             <div class="pic" :style="{backgroundImage: `url(${song.imageURL})`}">
@@ -134,7 +140,40 @@
 <style scoped>
   .body {
     background-color: #202020;
-    padding: 10px 10px 100px 10px;
+    padding: 10px 10px 80px 10px;
+  }
+  .subtitle{
+    position: relative;
+  }
+  .subtitle button{
+    font-size: 0px;
+    margin-left: 0px;
+    margin-top: 20px;
+    word-spacing: -5px;
+    opacity: 0;
+    transition: all .5s;
+    cursor: pointer;
+    background-color: transparent;
+    color: #BBBBBB;
+    box-shadow: 0 0 0 0 #00000000;
+    border: none;
+    outline: none;
+  }
+  hr{
+    opacity: 0.3;
+  }
+
+  .subtitle:hover button{
+    font-size: 30px;
+    margin-left: 12px;
+    margin-top: -10px;
+    word-spacing: -5px;
+    opacity: 1;
+    transition: all .5s;
+  }
+  .subtitle:hover button:hover{
+    color: white;
+    /*cursor: pointer;*/
   }
   .category{
     /*display: grid;*/
@@ -173,7 +212,7 @@
   }
   .home-item .home-item-song .pic{
     position: relative;
-    background-color: #5bc0de;
+    background-color: #151515;
     height: 150px;
     width: 150px;
     border-radius: 50%;
