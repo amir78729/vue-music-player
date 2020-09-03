@@ -3,8 +3,7 @@
     <div class=" container header " :style="{color: color}">
       <h1><i style="font-size: 30px" class="material-icons">chat</i> All Chats</h1>
     </div>
-    <div>
-
+    <div class="center">
       <table class="info table table-dark">
         <thead >
         <tr :style="{color: color}">
@@ -170,5 +169,13 @@
   }
   td{
     position: relative;
+  }
+  .center {
+    /*background-color: red;*/
+    /*width: 100vh;*/
+    /*margin-left: 150px;*/
+    padding: 10px;
+    /*height: 67vh;*/
+    overflow: auto;
   }
 </style>

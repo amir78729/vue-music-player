@@ -1,5 +1,8 @@
 <template>
-  <div class="container-fluid body">
+  <div class="container body">
+    <div class=" container header" :style="{color: color}">
+      <h1><i style="font-size: 30px" class="material-icons">library_music</i> Songs</h1>
+    </div>
     <div class="center">
       <table class="info table table-dark">
         <thead >
@@ -145,7 +148,6 @@
     padding: 10px;
     /*height: 67vh;*/
     overflow: auto;
-
   }
   .title {
     color: #5bc0de;
