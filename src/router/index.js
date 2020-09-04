@@ -6,6 +6,7 @@ import Songs from '../components/songs'
 import Chat from '../components/Chat'
 import Albums from '../components/Albums'
 import AllChats from "../components/AllChats";
+import AllPlaylists from "../components/AllPlaylists";
 
 Vue.use(Router);
 
@@ -39,6 +40,10 @@ export default new Router({
       path: '/all-chats',
       name: 'all-chats',
       component: AllChats,
+    }, {
+      path: '/all-playlists',
+      name: 'all-playlists',
+      component: AllPlaylists,
     },
   ]
 })

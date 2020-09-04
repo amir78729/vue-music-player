@@ -24,7 +24,7 @@
     </div>
 
     <div class="accordion-panel">
-      <router-link to="/album">
+      <router-link to="/albums">
         <button id="albums-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('albums')" :class="{'selected': isAlbums }">
           <!--        <div class="right-icon"><div :style="{backgroundColor: color}" class="line1"  ></div><div :style="{backgroundColor: color}" class="line2"></div></div>-->
           <i style="font-size: 15px" class="material-icons">album</i> Albums</button>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="accordion-panel">
-     <router-link to="/playlist">
+     <router-link to="/all-playlists">
        <button id="playlists-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('playlists')" :class="{'selected': isPlaylists }">
                  <div class="right-icon" >
 <!--                   <div :style="{backgroundColor: color}" class="line1"  ></div>-->
