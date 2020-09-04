@@ -3,9 +3,9 @@
 
     <div class="center">
       <div class="container playlist-info" :style="{color: color}">
-        <div :style="{backgroundImage:`url(${playlistCoverURL})`}" class="playlist-cover"></div>
-        <h1>{{playlistName}}</h1>
-        <p>{{playlistDescription}}</p>
+        <div :style="{backgroundImage:`url(${playlists[playlistIndex].imageURL})`}" class="playlist-cover"></div>
+        <h1>{{playlists[playlistIndex].title}}</h1>
+        <p>{{playlists[playlistIndex].description}}</p>
       </div>
       <table class="info table table-dark">
         <thead >
@@ -34,16 +34,18 @@
 
 <script>
   import {colors} from "../colors";
+  import {playlists} from "../playlists";
 
   export default {
     name: "Playlist",
-    props: ['color'],
+    props: ['color' , 'playlistIndex'],
     data() {
       return {
         playlistName : 'Playlist Name',
         playlistDescription : 'Playlist Description',
         playlistCoverURL : 'https://upload.wikimedia.org/wikipedia/en/b/b3/Opeth_-_Deliverance.jpg',
         colors: colors,
+        playlists: playlists,
 
         data: [
           {

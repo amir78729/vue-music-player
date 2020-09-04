@@ -6,7 +6,6 @@
 <!--    <button @click="changeColor('green')" >green</button>-->
 <!--    <button @click="changeColor('purple')" >purple</button>-->
 
-
     <div id="north"><app-header @colorChanged="changeColor($event)" :color="currentColor"></app-header></div >
 <!--    <div class="side col-sm-3" id="east"><app-right-panel></app-right-panel></div>-->
 <!--    <div class="side col-sm-3" id="west"><app-left-panel></app-left-panel></div>-->
@@ -24,7 +23,9 @@
         <router-view
           :color="this.currentColor"
           :contactIndex="currentContact"
-          @goToChat="changeCurrentContact($event)"></router-view></div>
+          :playlistIndex="currentPlaylist"
+          @goToChat="changeCurrentContact($event)"
+          @goToPlaylist="changeCurrentPlaylist($event)"></router-view></div>
       <div class="side " id="east"><app-right-panel :color="this.currentColor" @goToChat="changeCurrentContact($event)"></app-right-panel></div>
     </div>
     <div id="south"><app-footer :color="this.currentColor"></app-footer></div>
@@ -61,11 +62,14 @@
         currentPage: '',
         friends: friends,
         currentContact: 0,
-
+        currentPlaylist: 0,
       }
     },methods: {
       changeCurrentContact(index){
         this.currentContact = index;
+      },
+      changeCurrentPlaylist(index){
+        this.currentPlaylist = index;
       },
       changeColor(color){
         if (color === 'red'){

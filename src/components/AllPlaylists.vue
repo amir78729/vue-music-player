@@ -4,18 +4,20 @@
         <h1><i style="font-size: 30px" class="material-icons">playlist_play</i> Playlists</h1>
       </div>
       <div class="d-flex">
-        <div class="playlist-item d-flex" style="flex-wrap: wrap; ">
-          <div v-for="playlist in playlists" class="playlist-item-song">
-            <div class="pic" :style="{backgroundImage: `url(${playlist.imageURL})`}">
-              <div class="pic-hover">
-                <div class="play" :style="{backgroundColor: color}">
-                  <div class="play-sign"></div>
+        <div class="playlist-item d-flex" style="">
+          <div v-for="(playlist,index) in playlists" class="playlist-item-song">
+            <div class="pic" :style="{backgroundImage: `url(${playlist.imageURL})`}" >
+              <router-link to="/playlist">
+                <div class="pic-hover" @click="goToPlaylist(index)">
+                  <div class="play" :style="{backgroundColor: color}">
+                    <div class="play-sign"></div>
+                  </div>
                 </div>
-              </div>
+              </router-link>
             </div>
             <div class="txt">
-              <p style="font-size: 15px">{{playlist.title}}</p>
-              <p style="font-size: 13px"><i style="font-size: 15px" class="material-icons">people</i> {{playlist.artist}}</p>
+              <p style="font-size: 15px ; font-weight: inherit">{{playlist.title}}</p>
+              <p style="font-size: 13px">by <b>{{playlist.by}}</b></p>
             </div>
           </div>
 
@@ -35,7 +37,11 @@
         return {
           playlists: playlists
         }
-      },
+      },methods:{
+        goToPlaylist(index){
+          this.$emit('goToPlaylist', index);
+        }
+     }
     }
 </script>
 
@@ -67,6 +73,11 @@
   }
   .playlist-item-song{
     margin: 10px;
+  }
+  .playlist-item{
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
   }
   .playlist-item .playlist-item-song .pic{
     position: relative;

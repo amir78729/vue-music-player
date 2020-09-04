@@ -72,7 +72,7 @@
   }
   .friend .chat{
     transition: .3s;
-    opacity: 0;
+    opacity: .1;
   }
 
   .friend:hover .chat{
@@ -82,7 +82,7 @@
 
   .friend .listen-along{
     transition: .3s;
-    opacity: 0;
+    opacity: .1;
   }
 
   .friend:hover .listen-along{
