@@ -145,7 +145,6 @@
   }
   .subtitle{
     position: relative;
-
   }
   .subtitle button{
     font-size: 0px;

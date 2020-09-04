@@ -2,7 +2,7 @@
   <div class="body">
     <div class="footer-empty" :style="{color: color, borderColor: color}">
       <div class="footer ">
-        <div style="position: absolute; top:  -18px; width: 100%;">
+        <div style="position: absolute; top:  -15px; width: 100%;">
           <input type="range" min="1" max="100" value="50" class="slider" id="timeline" :style="{borderColor: color}">
         </div>
         <div class="footer-items-demo" >
@@ -100,7 +100,7 @@
     /*transition-delay:  0s;*/
   }
   .footer-empty .footer .footer-items-demo{
-    top: 0px;
+    top: 5px;
     width: 100%;
     position: absolute;
     bottom: 30px;
