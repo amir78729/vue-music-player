@@ -4,7 +4,7 @@
         <h1><i style="font-size: 30px" class="material-icons">playlist_play</i> Playlists</h1>
       </div>
       <div class="d-flex">
-        <div class="playlist-preview">
+        <div class="playlist-item d-flex" style="flex-wrap: wrap; ">
           <div v-for="playlist in playlists" class="playlist-item-song">
             <div class="pic" :style="{backgroundImage: `url(${playlist.imageURL})`}">
               <div class="pic-hover">
@@ -45,6 +45,8 @@
     padding: 10px 10px 60px 10px;
     position: relative;
     height: 100%;
+    overflow-y: auto;
+
   }
   .playlist-preview{
 
