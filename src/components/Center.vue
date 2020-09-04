@@ -6,7 +6,7 @@
       </div>
       <div class="home-item container " :style="{color: color}">
         <div class="subtitle d-flex">
-          <h3><i style="font-size: 20px" class="material-icons">music_note</i> Songs</h3>
+          <h3><i style="font-size: 15px" class="material-icons">music_note</i> Songs</h3>
           <router-link to="/songs"><button>  . . .</button></router-link>
         </div>
         <div class="category container d-flex">
@@ -33,7 +33,7 @@
 
       <div class="home-item container " :style="{color: color}">
         <div class="subtitle d-flex">
-          <h3><i style="font-size: 20px" class="material-icons">album</i> Albums</h3>
+          <h3><i style="font-size: 15px" class="material-icons">album</i> Albums</h3>
           <router-link to="/albums"><button>  . . .</button></router-link>
         </div>
         <div class="category container d-flex">
@@ -145,6 +145,7 @@
   }
   .subtitle{
     position: relative;
+
   }
   .subtitle button{
     font-size: 0px;
@@ -165,8 +166,8 @@
   }
 
   .subtitle:hover button{
-    font-size: 30px;
-    margin-left: 12px;
+    font-size: 20px;
+    margin-left: 5px;
     margin-top: -10px;
     word-spacing: -5px;
     opacity: 1;
@@ -198,6 +199,8 @@
   h3 {
     cursor: default;
     color: #777777;
+    font-size: 20px;
+
   }
   .txt {
     text-align: center;
