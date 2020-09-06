@@ -47,12 +47,14 @@
          Playlists
          </button>
      </router-link>
-      <div class="add-playlist-panel" v-if="addPlaylist">
-        <div class="d-flex">
+      <div style="padding: 20px 15px" class="add-playlist-panel" v-if="addPlaylist">
+        <div class="d-inline-flex">
+<!--          <input type="file">-->
           <div class="add-playlist-panel-pic">
-            <p>change</p>
+            <p> <i style="font-size: 15px" class="material-icons">edit</i> </p>
           </div>
-          <div style="margin-left: 10px">
+
+          <div style="padding-left: 10px; width: 100%">
             <div style="font-size: 12px; font-weight: bold;" :style="{color: color}">Title: </div>
             <input type="text">
           </div>
@@ -61,6 +63,7 @@
           <div style="font-size: 12px; font-weight: bold;" :style="{color: color}">Description: </div>
           <input type="text">
         </div>
+        <button class="btn add-playlist-btn" :style="{backgroundColor: color}" style="color: white"> Add Playlist!</button>
       </div>
 <!--      <div id="playlists" class="">-->
 <!--        <ul class="" style="margin: 0; padding: 0">-->
@@ -143,8 +146,21 @@
 </script>
 
 <style>
+  .add-playlist-btn{
+    height: 30px;
+    margin-top: 10px;
+    width: 100%;
+    opacity: .7;
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+  .add-playlist-btn:hover{
+     width: 100%;
+     opacity: 1;
+   }
   .add-playlist-panel{
-    margin: 10px;
+
   }
   .add-playlist-panel-pic{
     padding-top: 16px;
@@ -161,6 +177,7 @@
     box-shadow: 0 0 100px 0 #00000077 inset;
   }
   .add-playlist-panel-pic p{
+    width: 50px;
     cursor: pointer;
     font-size: 12px;
     color: white;
@@ -389,6 +406,8 @@
   /*  background-image: linear-gradient(to right, #252525, #181818);;*/
   /*}*/
   input {
+    border-radius: 5px;
+    height: 30px;
     width: 100%;
     border: none;
     background-color: #202020;
@@ -396,7 +415,7 @@
     transition: .5s;
   }
   input:hover {
-    /*background-color: #252525;*/
+    background-color: #252525;
     transition: .5s;
   }
   input:focus {
