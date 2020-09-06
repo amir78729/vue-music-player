@@ -5,7 +5,7 @@
         <i class="fa fa-search" style="color: white; text-align: left;"></i>
         <span></span>
       </button>
-      <input type="text" id="search-area" style="outline: none">
+      <input type="search" id="search-area" style="outline: none">
       </input>
     </div>
     <div class="color-palette-demo">

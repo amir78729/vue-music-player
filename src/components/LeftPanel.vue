@@ -31,15 +31,16 @@
       </router-link>
     </div>
 
-    <div class="accordion-panel">
+    <div class="accordion-panel" style="position: relative;" :class="{'rotate': addPlaylist}">
+      <div class="icon"  @click="addPlaylist = !addPlaylist">
+        <i style="font-size: 15px; font-weight: bold" class="material-icons" >add</i>
+      </div>
      <router-link to="/all-playlists">
        <button id="playlists-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('playlists')" :class="{'selected': isPlaylists }">
-                 <div class="right-icon" @click="addPlaylist = !addPlaylist">
-<!--                   <div :style="{backgroundColor: color}" class="line1"  ></div>-->
-<!--                   <div :style="{backgroundColor: color}" class="line2"></div>-->
-                   <div  class="line1"  ></div>
-                   <div  class="line2"></div>
-                 </div>
+<!--                 <div class="right-icon" @click="addPlaylist = !addPlaylist">-->
+<!--                   <div  class="line1"  ></div>-->
+<!--                   <div  class="line2"></div>-->
+<!--                 </div>-->
 <!--         <div class="add-playlist">-->
 <!--            Add-->
 <!--         </div>-->
@@ -214,57 +215,84 @@
     border-left: solid  2px;
     transition: all .4s;
   }
-  .selected .right-icon {
-    background-color: transparent;
+  /*.selected .right-icon {*/
+  /*  background-color: transparent;*/
+  /*  border-radius: 50%;*/
+  /*}*/
+  /*.selected:hover .right-icon {*/
+  /*  rotation: 15deg;*/
+  /*  background-color: #777777;*/
+  /*  box-shadow: 0 0 0 2px #777777 ;*/
+  /*}*/
+  /*.selected:hover .right-icon:hover {*/
+  /*  rotation: 15deg;*/
+  /*  background-color: white;*/
+  /*  box-shadow: 0 0 0 2px white ;*/
+  /*}*/
+  /*.selected .right-icon .line2,.line1{*/
+  /*  !*background-color: #202020;*!*/
+  /*  rotation: 50deg;*/
+  /*}*/
+  /*.selected:hover .right-icon .line2,.line1{*/
+  /*  !*background-color: #202020;*!*/
+  /*}*/
+
+
+  /*.selected .right-icon .line2{*/
+  /*  position: absolute;*/
+  /*  top: 5px;*/
+  /*  background-color: #20202000;*/
+  /*  height: 0;*/
+  /*  transform: rotate(45deg);*/
+  /*}*/
+  /*.selected .right-icon .line1{*/
+  /*  position: absolute;*/
+  /*  top: 5px;*/
+  /*  background-color: #20202000;*/
+  /*  height: 0;*/
+  /*  transform: rotate(-45deg);*/
+  /*}*/
+  /*.selected:hover .right-icon .line1{*/
+  /*  rotation-point: 6px 6px;*/
+  /*  background-color: #202020;*/
+  /*  transform: rotate(0deg);*/
+  /*  height: 10px;*/
+  /*  top:1px*/
+  /*}*/
+  /*.selected:hover .right-icon .line2{*/
+
+  /*  top: 1px;*/
+  /*  rotation-point: 6px 6px;*/
+  /*  background-color: #202020;*/
+  /*  transform: rotate(90deg);*/
+  /*  height: 10px;*/
+  /*}*/
+
+
+  .icon{
+    cursor: pointer;
+    right: 15px;
+    top: 15px;
+    position: absolute;
+    color: #777777;
+    z-index: 1000;
+    /*background-color: #777777;*/
+    height: 20px;
+    width: 20px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
     border-radius: 50%;
+    padding-top: 1px;
+    transition: .3s;
   }
-  .selected:hover .right-icon {
-    rotation: 15deg;
-    background-color: #777777;
-    box-shadow: 0 0 0 2px #777777 ;
-  }
-  .selected:hover .right-icon:hover {
-    rotation: 15deg;
-    background-color: white;
-    box-shadow: 0 0 0 2px white ;
-  }
-  .selected .right-icon .line2,.line1{
-    /*background-color: #202020;*/
-    rotation: 50deg;
-  }
-  .selected:hover .right-icon .line2,.line1{
-    /*background-color: #202020;*/
+  .icon:hover{
+    color:  white;
   }
 
-
-  .selected .right-icon .line2{
-    position: absolute;
-    top: 5px;
-    background-color: #20202000;
-    height: 0;
+  .rotate .icon{
     transform: rotate(45deg);
-  }
-  .selected .right-icon .line1{
-    position: absolute;
-    top: 5px;
-    background-color: #20202000;
-    height: 0;
-    transform: rotate(-45deg);
-  }
-  .selected:hover .right-icon .line1{
-    rotation-point: 6px 6px;
-    background-color: #202020;
-    transform: rotate(0deg);
-    height: 10px;
-    top:1px
-  }
-  .selected:hover .right-icon .line2{
-
-    top: 1px;
-    rotation-point: 6px 6px;
-    background-color: #202020;
-    transform: rotate(90deg);
-    height: 10px;
+    transition: .3s;
   }
 
 
