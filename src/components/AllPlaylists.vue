@@ -66,7 +66,7 @@
     /*background-color: red;*/
 
   }
-  .add{
+  .add{ 
     margin: auto 10px;
     font-size: 12px;
     padding-top: 3px;
