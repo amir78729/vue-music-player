@@ -88,7 +88,7 @@
     margin: 0 0px;
     /*height: 100px;*/
     top: 0px;
-    background-image: linear-gradient(to bottom, #050505, #151515);
+    background-image: linear-gradient(to bottom,#202020,#202020, transparent);
     /*width: calc(100% - 0px);*/
     width:100%;
     /*border-radius: 20px;*/

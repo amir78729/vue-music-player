@@ -26,7 +26,7 @@
   }
   .header{
     position: fixed;
-    background-image: linear-gradient(to bottom,#202020, transparent);
+    background-image: linear-gradient(to bottom,#202020,#202020, transparent);
     padding-top: 10px;
     z-index: 50;
     text-shadow: #000 0px 0px 20px;

@@ -3,6 +3,8 @@
       <div class=" container header d-flex" :style="{color: color}">
         <h1><i style="font-size: 30px" class="material-icons">playlist_play</i> Playlists</h1>
         <p class="total">{{playlists.length}} playlists</p>
+          <div class="add" :style="{backgroundColor: color}">add playlist</div>
+
       </div>
       <div class="d-flex">
         <div class="playlist-item d-flex" style="">
@@ -56,11 +58,30 @@
   }
   .header{
     position: fixed;
-    background-image: linear-gradient(to bottom,#202020, transparent);
+    background-image: linear-gradient(to bottom,#202020,#202020, transparent);
     padding-top: 10px;
     z-index: 50;
     text-shadow: #000 0px 0px 20px;
+    width: 100%;
+    /*background-color: red;*/
 
+  }
+  .add{
+    margin: auto 10px;
+    font-size: 12px;
+    padding-top: 3px;
+    color: white;
+    width: 100px;
+    height: 24px;
+    text-align: center;
+    box-shadow: 0 0 100px 0 #00000077 inset;
+    border-radius: 12px;
+    transition: .3s;
+    cursor: pointer;
+  }
+  .add:hover {
+    box-shadow: 0 0 100px 0 #00000000 inset;
+    transition: .3s;
   }
   h1  {
     /*font-weight: bold;*/
