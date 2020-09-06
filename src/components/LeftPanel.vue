@@ -34,7 +34,7 @@
     <div class="accordion-panel">
      <router-link to="/all-playlists">
        <button id="playlists-button" class="btn accordion" :style="{borderColor: color}" @click="changePage('playlists')" :class="{'selected': isPlaylists }">
-                 <div class="right-icon" >
+                 <div class="right-icon" @click="addPlaylist = !addPlaylist">
 <!--                   <div :style="{backgroundColor: color}" class="line1"  ></div>-->
 <!--                   <div :style="{backgroundColor: color}" class="line2"></div>-->
                    <div  class="line1"  ></div>
@@ -47,6 +47,21 @@
          Playlists
          </button>
      </router-link>
+      <div class="add-playlist-panel" v-if="addPlaylist">
+        <div class="d-flex">
+          <div class="add-playlist-panel-pic">
+            <p>change</p>
+          </div>
+          <div style="margin-left: 10px">
+            <div style="font-size: 12px; font-weight: bold;" :style="{color: color}">Title: </div>
+            <input type="text">
+          </div>
+        </div>
+        <div style="margin-top: 10px">
+          <div style="font-size: 12px; font-weight: bold;" :style="{color: color}">Description: </div>
+          <input type="text">
+        </div>
+      </div>
 <!--      <div id="playlists" class="">-->
 <!--        <ul class="" style="margin: 0; padding: 0">-->
 <!--          <button class="btn  item" v-for="playlist in playlists">{{ playlist }}</button>-->
@@ -76,6 +91,8 @@
         isAlbums: false,
         isPlaylists: false,
         isChat: false,
+
+        addPlaylist:false,
         playlists: ['playlist 1','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2','playlist 2'],
       }
     },
@@ -126,6 +143,36 @@
 </script>
 
 <style>
+  .add-playlist-panel{
+    margin: 10px;
+  }
+  .add-playlist-panel-pic{
+    padding-top: 16px;
+    height: 50px;
+    width:50px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .5s;
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+  }
+  .add-playlist-panel-pic:hover{
+    box-shadow: 0 0 100px 0 #00000077 inset;
+  }
+  .add-playlist-panel-pic p{
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    opacity: .5;
+    transition: .3s;
+  }
+  .add-playlist-panel-pic:hover p{
+    opacity: 1;
+    transition: .3s;
+
+  }
+
   .accordion {
     background-color: #252525;
     color: #777777;
@@ -341,5 +388,19 @@
   /*#chat-button.selected{*/
   /*  background-image: linear-gradient(to right, #252525, #181818);;*/
   /*}*/
+  input {
+    width: 100%;
+    border: none;
+    background-color: #202020;
+    color: #777777;
+    transition: .5s;
+  }
+  input:hover {
+    /*background-color: #252525;*/
+    transition: .5s;
+  }
+  input:focus {
+    outline: none;
+  }
 
 </style>

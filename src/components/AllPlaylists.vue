@@ -84,7 +84,7 @@
     transition: .5s;
   }
   .playlist-item-song{
-    margin: 10px;
+    margin: 5px;
   }
   .playlist-item{
     padding-top: 60px;
