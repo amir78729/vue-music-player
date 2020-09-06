@@ -1,7 +1,8 @@
 <template>
-  <div class="container body">
-    <div class=" container header" :style="{color: color}">
+  <div class=" body">
+    <div class=" container header d-flex" :style="{color: color}">
       <h1><i style="font-size: 30px" class="material-icons">library_music</i> Songs</h1>
+      <p class="total">{{data.length}} songs</p>
     </div>
     <div class="center">
       <table class="info table table-dark">
@@ -108,7 +109,14 @@
   .body {
 
     background-color: #202020;
-    padding: 10px 10px 100px 10px;
+    padding: 0px 10px 40px 10px;
+  }
+  .header{
+    position: fixed;
+    background-image: linear-gradient(to bottom,#202020, transparent);
+    padding-top: 10px;
+    z-index: 50;
+    text-shadow: #000 0px 0px 20px;
   }
   .playlist-info h1,p{
     /*color: #5bc0de;*/
@@ -146,8 +154,14 @@
     /*width: 100vh;*/
     /*margin-left: 150px;*/
     padding: 10px;
+    padding-top: 60px;
+
     /*height: 67vh;*/
     overflow: auto;
+  }
+  h1  {
+    /*font-weight: bold;*/
+    cursor: default;
   }
   .title {
     color: #5bc0de;
@@ -174,5 +188,14 @@
     text-shadow: 0 0 10px black;
     cursor: default;
   }
-
+  .total{
+    color: #777777;
+    cursor: default;
+    margin: auto 5px;
+    transition: .2s;
+  }
+  .total:hover{
+    color: white;
+    transition: .2s;
+  }
 </style>

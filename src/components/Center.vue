@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid body">
+  <div class=" body">
     <div >
       <div class=" container header" :style="{color: color}">
         <h1><i style="font-size: 30px" class="material-icons">home</i> Home</h1>
@@ -140,7 +140,7 @@
 <style scoped>
   .body {
     background-color: #202020;
-    padding: 10px 10px 60px 10px;
+    padding: 0px 10px 60px 10px;
     position: relative;
   }
   .subtitle{
@@ -182,13 +182,16 @@
     overflow-x:auto ;
   }
   .header{
-    /*position: fixed;*/
-    /*top: ;*/
-    /*z-index: 1;*/
-    /*background-image: linear-gradient(to bottom, #202020, transparent);*/
-    /*!*text-align: center;*!*/
+    position: fixed;
+    background-image: linear-gradient(to bottom,#202020, transparent);
+    padding-top: 10px;
+    z-index: 50;
+    text-shadow: #000 0px 0px 20px;
+
+
   }
   .home-item{
+    padding-top: 60px;
 
   }
   h1  {

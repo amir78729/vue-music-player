@@ -1,7 +1,8 @@
 <template>
-  <div class="body container-fluid">
-    <div class=" container header " :style="{color: color}">
+  <div class="body ">
+    <div class=" container header d-flex" :style="{color: color}">
       <h1><i style="font-size: 30px" class="material-icons">chat</i> All Chats</h1>
+      <p class="total">{{friends.length}} chats</p>
     </div>
     <div class="center">
       <table class="info table table-dark">
@@ -52,7 +53,7 @@
     },
     data() {
       return {
-        friends: friends
+        friends: friends,
       }
     }
     }
@@ -63,13 +64,19 @@
     /*height: 100%;*/
     width: 100%;
     background-color: #202020;
-    padding: 10px 10px 40px 10px;
+    padding: 0px 10px 40px 10px;
   }
   h1  {
     /*font-weight: bold;*/
     cursor: default;
   }
-  .header {
+  .header{
+    position: fixed;
+    background-image: linear-gradient(to bottom,#202020, transparent);
+    padding-top: 10px;
+    z-index: 50;
+    text-shadow: #000 0px 0px 20px;
+
 
   }
   .friend{
@@ -176,6 +183,7 @@
     /*width: 100vh;*/
     /*margin-left: 150px;*/
     padding: 10px;
+    padding-top: 60px;
     /*height: 67vh;*/
     overflow: auto;
   }
@@ -204,5 +212,15 @@
   .red:hover{
     opacity: 1;
     transition: .5s;
+  }
+  .total{
+    color: #777777;
+    cursor: default;
+    margin: auto 5px;
+    transition: .2s;
+  }
+  .total:hover{
+    color: white;
+    transition: .2s;
   }
 </style>

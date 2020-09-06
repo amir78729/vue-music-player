@@ -2,10 +2,14 @@
   <div class="container-fluid body">
 
     <div class="center">
-      <div class="container playlist-info" :style="{color: color}">
+      <div class="container playlist-info" :style="{color: color , backgroundImage:`url(${playlists[playlistIndex].imageURL})`}">
         <div :style="{backgroundImage:`url(${playlists[playlistIndex].imageURL})`}" class="playlist-cover"></div>
         <h1>{{playlists[playlistIndex].title}}</h1>
         <p>{{playlists[playlistIndex].description}}</p>
+        <router-link to="/all-playlists">
+          <div class="d-flex go-back"><i style="font-size: 15px" class="material-icons">arrow_back</i> <p>Back to Playlists</p></div>
+        </router-link>
+
       </div>
       <table class="info table table-dark">
         <thead >
@@ -111,16 +115,65 @@
 
 <style scoped>
   .body {
-
     background-color: #202020;
     padding: 10px 10px 20px 10px;
   }
-  .playlist-info h1,p{
-    /*color: #5bc0de;*/
-    /*text-align: center;*/
+  .go-back{
+    position: absolute;
+    top: 5px;
+    cursor: pointer;
 
   }
+  .go-back i{
+    color: white;
+    margin: 5px;
+    opacity: 0;
+    transition: .3s;
+    cursor: pointer;
+  }
+  .go-back:hover i{
+    opacity: 1;
+    transition: .3s;
+  }
+  .go-back p{
+    cursor: pointer;
+
+    margin-top: 3px;
+    margin-left: -10px;
+    transition: .3s;
+  }
+  .go-back:hover p{
+    margin-left: 2px;
+    transition: .3s;
+    color: white;
+  }
+  .playlist-info  p{
+    color: #777777;
+    transition: .3s;
+  }
+  .playlist-info  p:hover{
+    color: white;
+    transition: .3s;
+  }
+
+  .playlist-info  h1{
+    font-weight: bolder;
+
+    transition: .3s;
+  }
+  .playlist-info  h1:hover{
+    transition: .3s;
+    text-shadow: 0 0  50px black;
+  }
   .playlist-info{
+    position: relative;
+    padding: 20px 0;
+    background-size: 95% ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #202020;
+    background-blend-mode: overlay;
+    box-shadow: 0px 0px 80px 160px #202020 inset;
     cursor: default;
     transition: all 0.5s;
     horiz-align: center;
@@ -129,7 +182,7 @@
     text-align: center;
   }
   .playlist-cover{
-    margin: 0 auto;
+    margin: 10px auto;
     height: 200px;
     width: 200px;
     background-repeat: no-repeat;
