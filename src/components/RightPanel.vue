@@ -37,7 +37,8 @@
         }
       },methods: {
       goToChat(index){
-        this.$emit('goToChat', index);
+        // this.$emit('goToChat', index);
+        this.$store.state.currentChatIndex = index;
       }
     }
   }

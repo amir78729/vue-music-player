@@ -6,10 +6,12 @@
 
           <i class="material-icons back">arrow_back</i>
         </router-link>
+<!--        <div class="pic" :style="{backgroundImage: `url(${friends[contactIndex].image})`}"></div>-->
+        <div class="pic" :style="
 
-        <div class="pic" :style="{backgroundImage: `url(${friends[contactIndex].image})`}"></div>
+{backgroundImage: `url(${friends[currentChatIndex].image})`}"></div>
         <div class="info">
-          <p :style="{color : color}" style="font-size: 20px;transition: .5s;">{{friends[contactIndex].name}}</p>
+          <p :style="{color : color}" style="font-size: 20px;transition: .5s;">{{friends[currentChatIndex].name}}</p>
           <p class="status">online</p>
         </div>
 
@@ -29,16 +31,24 @@
 
 <script>
   import {friends} from "../friends";
+  import {store} from '../store/store';
 
   export default {
       name: "Chat",
-      props:['color', 'contactIndex'],
+      // props:['color', 'contactIndex'],
+    props:['color' ],
+
     data() {
       return {
         friends: friends,
       }
     },
+    computed:{
+        currentChatIndex(){
+          return this.$store.state.currentChatIndex;
+        }
     }
+  }
 </script>
 
 <style scoped>

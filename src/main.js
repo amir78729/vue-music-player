@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import {colors} from "./colors";
+import {store} from "./store/store";
 // import BootstrapVue from 'bootstrap-vue'
 //
 // Vue.use(BootstrapVue)
@@ -14,6 +15,8 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store: store,
+  colors,
   components: { App },
   template: '<App/>',
   methods: {
