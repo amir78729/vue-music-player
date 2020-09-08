@@ -40,7 +40,8 @@
         }
       },methods:{
         goToPlaylist(index){
-          this.$emit('goToPlaylist', index);
+          // this.$emit('goToPlaylist', index);
+          this.$store.state.currentPlaylistIndex = index;
         }
      }
     }

@@ -2,10 +2,10 @@
   <div class="container-fluid body">
 
     <div class="center">
-      <div class="container playlist-info" :style="{color: color , backgroundImage:`url(${playlists[playlistIndex].imageURL})`}">
-        <div :style="{backgroundImage:`url(${playlists[playlistIndex].imageURL})`}" class="playlist-cover"></div>
-        <h1>{{playlists[playlistIndex].title}}</h1>
-        <p>{{playlists[playlistIndex].description}}</p>
+      <div class="container playlist-info" :style="{color: color , backgroundImage:`url(${playlists[currentPlaylistIndex].imageURL})`}">
+        <div :style="{backgroundImage:`url(${playlists[currentPlaylistIndex].imageURL})`}" class="playlist-cover"></div>
+        <h1>{{playlists[currentPlaylistIndex].title}}</h1>
+        <p>{{playlists[currentPlaylistIndex].description}}</p>
         <router-link to="/all-playlists">
           <div class="d-flex go-back"><i style="font-size: 15px" class="material-icons">arrow_back</i> <p>Back to Playlists</p></div>
         </router-link>
@@ -109,7 +109,11 @@
           },
         ]
       }
-    },
+    },computed: {
+      currentPlaylistIndex(){
+        return this.$store.state.currentPlaylistIndex;
+      }
+    }
   }
 </script>
 

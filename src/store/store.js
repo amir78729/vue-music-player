@@ -9,5 +9,9 @@ export const store = new Vuex.Store({
     currentChatIndex: 0,
     currentColor: 'red',
 
+  },getters: {
+
+  },mutations: { //setters
+
   }
 });

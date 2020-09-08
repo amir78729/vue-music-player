@@ -22,7 +22,6 @@
       <div id="center" class="">
         <router-view
           :color="this.currentColor"
-          :contactIndex="currentContact"
           :playlistIndex="currentPlaylist"
           @goToChat="changeCurrentContact($event)"
           @goToPlaylist="changeCurrentPlaylist($event)"></router-view></div>
