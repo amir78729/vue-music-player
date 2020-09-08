@@ -23,8 +23,6 @@
               <p style="font-size: 13px">by <b>{{playlist.by}}</b></p>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
@@ -66,7 +64,7 @@
     /*background-color: red;*/
 
   }
-  .add{ 
+  .add{
     margin: auto 10px;
     font-size: 12px;
     padding-top: 3px;
@@ -74,13 +72,13 @@
     width: 100px;
     height: 24px;
     text-align: center;
-    box-shadow: 0 0 100px 0 #00000077 inset;
+    box-shadow: 0 0 100px 0 #00000000 inset;
     border-radius: 12px;
     transition: .3s;
     cursor: pointer;
   }
   .add:hover {
-    box-shadow: 0 0 100px 0 #00000000 inset;
+    box-shadow: 0 0 100px 0 #00000077 inset;
     transition: .3s;
   }
   h1  {
