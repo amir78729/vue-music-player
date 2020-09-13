@@ -4,7 +4,6 @@
         <h1><i style="font-size: 30px" class="material-icons">playlist_play</i> Playlists</h1>
         <p class="total">{{playlists.length}} playlists</p>
           <div class="add" :style="{backgroundColor: color}">add playlist</div>
-
       </div>
       <div class="d-flex">
         <div class="playlist-item d-flex" style="">

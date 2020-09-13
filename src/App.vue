@@ -22,7 +22,6 @@
       <div id="center" class="">
         <router-view
           :color="this.currentColor"
-          :playlistIndex="currentPlaylist"
           @goToChat="changeCurrentContact($event)"
           @goToPlaylist="changeCurrentPlaylist($event)"></router-view></div>
       <div class="side " id="east"><app-right-panel :color="this.currentColor" @goToChat="changeCurrentContact($event)"></app-right-panel></div>
@@ -208,6 +207,7 @@
   ::-webkit-scrollbar-thumb {
     background: #333333;
     transition: .5s;
+    border-radius: 2px;
     /*border-radius: 10px;*/
   }
 
@@ -215,5 +215,6 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #353535;
     transition: .5s;
+
   }
 </style>

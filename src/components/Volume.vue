@@ -1,13 +1,14 @@
 <template>
     <div class="row" style="position: absolute; right: 10px;top: -55px">
       <div class="col-sm-1" >
-        <div id="icon"
-        :class="{'vol3': volume >= 66,
-        'vol2': 66>volume && volume >= 33,
-        'vol1': 33>volume && volume > 0,
-        'vol0': volume == 0,
-        }">
-        </div>
+<!--        <div id="icon"-->
+<!--        :class="{'vol3': volume >= 66,-->
+<!--        'vol2': 66>volume && volume >= 33,-->
+<!--        'vol1': 33>volume && volume > 0,-->
+<!--        'vol0': volume == 0,-->
+<!--        }">-->
+
+          <div id="icon" v-if="currentVolume === 0"><button>hi</button></div>
       </div>
       <div class="slidecontainer " style="padding-left: 20px">
         <input :value="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">
@@ -17,6 +18,8 @@
 </template>
 
 <script>
+
+  import {store as state} from '../store/store';c
     export default {
       name: "volume",
       data() {
@@ -25,19 +28,25 @@
           volumeBackground: "../icons/png/003-volume-1.png"
         }
       },
+
       methods: {
         changeVolume(e) {
-          this.volume = e.target.value;
-          if (e.target.value> 60) {
-            this.volumeBackground = "../icons/png/003-volume-1.png";
-            // document.getElementById("icon").style.backgroundImage = "url('../icons/png/003-volume-1.png')";
-          }else if (e.target.value>0) {
-            this.volumeBackground = "../icons/png/006-volume.png";
-            // document.getElementById("icon").style.backgroundImage = "url('../icons/png/006-volume.png')";
-          }else {
-            this.volumeBackground = "../icons/png/004-mute-1.png";
-            // document.getElementById("icon").style.backgroundImage = "url('../icons/png/004-mute-1.png')";
-          }
+
+          // this.$emit('goToChat', index);
+          this.$store.state.currentChatIndex = e.target.value;
+
+
+          // this.volume = e.target.value;
+          // if (e.target.value> 60) {
+          //   this.volumeBackground = "../icons/png/003-volume-1.png";
+          //   // document.getElementById("icon").style.backgroundImage = "url('../icons/png/003-volume-1.png')";
+          // }else if (e.target.value>0) {
+          //   this.volumeBackground = "../icons/png/006-volume.png";
+          //   // document.getElementById("icon").style.backgroundImage = "url('../icons/png/006-volume.png')";
+          // }else {
+          //   this.volumeBackground = "../icons/png/004-mute-1.png";
+          //   // document.getElementById("icon").style.backgroundImage = "url('../icons/png/004-mute-1.png')";
+          // }
         }
       }
     }
@@ -56,7 +65,7 @@
   .vol3{
     background-image: url("../icons/png/003-volume-1.png");
   }
-  #icon {
+  .icon {
     /*filter: brightness(0.5) sepia(1) saturate(10000%);*/
     /*background-image: url("../icons/png/003-volume-1.png");*/
     margin: 5px;

@@ -8,6 +8,8 @@ export const store = new Vuex.Store({
     currentPlaylistIndex: 0,
     currentChatIndex: 0,
     currentColor: 'red',
+    currentVolume: 50
+
 
   },getters: {
 
