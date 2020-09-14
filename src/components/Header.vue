@@ -14,7 +14,7 @@
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i style="font-size: 20px " class="material-icons">settings</i>
       </button>
-      <div class="dropdown-menu">
+      <div class="dropdown-menu menu">
         <a class="dropdown-item" href="#">
           <div class="color-palette-demo">
             <div class="color-palette-text ">
@@ -32,7 +32,6 @@
         </a>
         <a class="dropdown-item" href="#">Another action</a>
         <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Separated link</a>
       </div>
     </div>
@@ -78,6 +77,18 @@
 </script>
 
 <style scoped>
+  .menu{
+    background-color: #202020;
+
+  }
+  .menu a{
+    color: #777777;
+    background-color: #202020;
+  }
+  .menu a:hover{
+    color: white;
+    background-color: #252525;
+  }
 
   .setting-btn{
     color: transparent;
