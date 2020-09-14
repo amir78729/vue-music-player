@@ -20,10 +20,14 @@
 
 <!--      <div id="center" class=""><app-playlist-page :color="this.currentColor"></app-playlist-page></div>-->
       <div id="center" class="">
-        <router-view
-          :color="this.currentColor"
-          @goToChat="changeCurrentContact($event)"
-          @goToPlaylist="changeCurrentPlaylist($event)"></router-view></div>
+        <transition name="slither" mode="out-in">
+          <router-view
+            :color="this.currentColor"
+            @goToChat="changeCurrentContact($event)"
+            @goToPlaylist="changeCurrentPlaylist($event)">
+          </router-view>
+        </transition>
+      </div>
       <div class="side " id="east"><app-right-panel :color="this.currentColor" @goToChat="changeCurrentContact($event)"></app-right-panel></div>
     </div>
     <div id="south"><app-footer :color="this.currentColor"></app-footer></div>
@@ -158,7 +162,7 @@
   #center {
     /*height: calc(100vh - 130px);*/
     /*height: 80vh;*/
-    background-color: #181818;
+    background-color: #202020;
     height: calc(100vh - 60px);
     overflow: auto;
     width: 60%;
@@ -200,7 +204,7 @@
     background-color: #252525;
     transition: .5s;
     /*box-shadow: inset 0 0 5px grey;*/
-    /*border-radius: 10px;*/
+    border-radius: 2px;
   }
 
   /* Handle */
@@ -215,6 +219,62 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #353535;
     transition: .5s;
-
   }
+
+
+
+  /*******************************************/
+
+  .slither-enter {
+    /*transition: transform .5s ease-in-out;*/
+    transition:  all .2s ease-in-out;
+    opacity: 0;
+  }
+
+  .slither-enter-active {
+    animation: slide-in .2s ease-out;
+    transition:  all .2s ease-in-out;
+    opacity: 1;
+  }
+  .slither-leave {
+
+    opacity: 1;
+  }
+
+  .slither-leave-active {
+    /*transition: transform .5s ease-in-out;*/
+    animation: slide-out .2s ease-in;
+    transition: .2s ease-in-out;
+    opacity: 0;
+  }
+
+  /*.slither-enter, .slither-leave-to {*/
+  /*  transform: translateX(-100%);*/
+  /*}*/
+
+  /*.slither-enter-to, .slither-leave {*/
+  /*  transform: translateX(0);*/
+  /*}*/
+
+  @keyframes slide-in {
+    from{
+      transform: translateX(-20px);
+      /*transform: translateX(-100%);*/
+    }
+
+    to{
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-out {
+    from{
+      transform: translateX(0px);
+    }
+    to{
+      transform: translateX(20px);
+      /*transform: translateX(100%);*/
+    }
+  }
+
+
 </style>
