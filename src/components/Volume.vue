@@ -19,7 +19,7 @@
 
 <script>
 
-  import {store as state} from '../store/store';c
+  import {store as state} from '../store/store';
     export default {
       name: "volume",
       data() {

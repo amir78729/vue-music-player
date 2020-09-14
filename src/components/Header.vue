@@ -8,18 +8,49 @@
       <input type="search" id="search-area" style="outline: none">
       </input>
     </div>
-    <div class="color-palette-demo">
-      <div class="color-palette-text ">
-        change color
-      </div>
-      <div class="color-palette">
-        <button class="btn color-button" :style="{backgroundColor: colors.blue}" @click="changeColor('blue')" ></button>
-        <button class="btn color-button" :style="{backgroundColor: colors.red}" @click="changeColor('red')" ></button>
-        <button class="btn color-button" :style="{backgroundColor: colors.yellow}" @click="changeColor('yellow')" ></button>
-        <button class="btn color-button" :style="{backgroundColor: colors.green}" @click="changeColor('green')" ></button>
-        <button class="btn color-button" :style="{backgroundColor: colors.purple}" @click="changeColor('purple')" ></button>
+
+    <div class="btn-group" style="position: absolute;right: 10px;top: 10px;">
+      <button class="setting-btn btn btn-sm dropdown-toggle"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i style="font-size: 20px " class="material-icons">settings</i>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">
+          <div class="color-palette-demo">
+            <div class="color-palette-text ">
+              change color
+            </div>
+            <div class="color-palette">
+              <button class="btn color-button" :style="{backgroundColor: colors.blue}" @click="changeColor('blue')" ></button>
+              <button class="btn color-button" :style="{backgroundColor: colors.red}" @click="changeColor('red')" ></button>
+              <button class="btn color-button" :style="{backgroundColor: colors.yellow}" @click="changeColor('yellow')" ></button>
+              <button class="btn color-button" :style="{backgroundColor: colors.green}" @click="changeColor('green')" ></button>
+              <button class="btn color-button" :style="{backgroundColor: colors.purple}" @click="changeColor('purple')" ></button>
+            </div>
+          </div>
+
+        </a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
       </div>
     </div>
+
+<!--    <div class="color-palette-demo">-->
+<!--      <div class="color-palette-text ">-->
+<!--        change color-->
+<!--      </div>-->
+<!--      <div class="color-palette">-->
+<!--        <button class="btn color-button" :style="{backgroundColor: colors.blue}" @click="changeColor('blue')" ></button>-->
+<!--        <button class="btn color-button" :style="{backgroundColor: colors.red}" @click="changeColor('red')" ></button>-->
+<!--        <button class="btn color-button" :style="{backgroundColor: colors.yellow}" @click="changeColor('yellow')" ></button>-->
+<!--        <button class="btn color-button" :style="{backgroundColor: colors.green}" @click="changeColor('green')" ></button>-->
+<!--        <button class="btn color-button" :style="{backgroundColor: colors.purple}" @click="changeColor('purple')" ></button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
   </div>
 </template>
 
@@ -47,6 +78,32 @@
 </script>
 
 <style scoped>
+
+  .setting-btn{
+    color: transparent;
+    border: none;
+    height: 40px;
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*top: 10px;*/
+    border-radius: 20px;
+    box-shadow: none;
+    transition: all .5s;
+  }
+  .setting-btn i{
+    transition: all .5s;
+    margin-top: 5px;
+    color: #777777;
+  }
+  .setting-btn:hover i{
+    transform: rotate(90deg);
+    color: white;
+    /*right: 15px;*/
+    /*top: 15px;*/
+    transition: all .5s;
+  }
+
+
   .color-palette-demo .color-palette-text{
     opacity: 1;
     text-align: center;
@@ -56,9 +113,9 @@
     height: 30px;
     width: 165px;
     transform: rotateX(0deg);
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    /*position: absolute;*/
+    /*top: 15px;*/
+    /*right: 15px;*/
     transition: all .5s ease-in-out;
   }
   .color-palette-demo .color-palette{
@@ -94,6 +151,7 @@
     box-shadow: 0 0 100px 10px #00000088 inset;
 
   }
+
   input {
     border: none;
     box-shadow: none;
