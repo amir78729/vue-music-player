@@ -8,10 +8,13 @@
 <!--        'vol0': volume == 0,-->
 <!--        }">-->
 
-          <div id="icon" v-if="currentVolume === 0"><button>hi</button></div>
+        <div class="icon" v-if="currentVolume >= 60"><i style="font-size: 20px " class="material-icons">volume_up</i></div>
+        <div class="icon" v-if="60 >= currentVolume && currentVolume > 30"><i style="font-size: 20px " class="material-icons">volume_down</i></div>
+        <div class="icon" v-if="30 >= currentVolume && currentVolume > 1"><i style="font-size: 20px " class="material-icons">volume_mute</i></div>
+        <div class="icon" v-if="1 >= currentVolume"><i style="font-size: 20px " class="material-icons">volume_off</i></div>
       </div>
       <div class="slidecontainer " style="padding-left: 20px">
-        <input :value="volume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">
+        <input :value="currentVolume" type="range" min="0" max="100" value="50" class="slider" id="volume" @input="changeVolume($event)">
 
       </div>
     </div>
@@ -27,13 +30,17 @@
           volume: 50,
           volumeBackground: "../icons/png/003-volume-1.png"
         }
+      },computed:{
+        currentVolume(){
+          return this.$store.state.currentVolume;
+        }
       },
 
       methods: {
         changeVolume(e) {
 
           // this.$emit('goToChat', index);
-          this.$store.state.currentChatIndex = e.target.value;
+          this.$store.state.currentVolume = e.target.value;
 
 
           // this.volume = e.target.value;
@@ -68,9 +75,12 @@
   .icon {
     /*filter: brightness(0.5) sepia(1) saturate(10000%);*/
     /*background-image: url("../icons/png/003-volume-1.png");*/
-    margin: 5px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /*margin: 5px;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    position: absolute;
+    top: 5px;
+    right: 0;
     height: 20px;
     width: 20px;
     /*background-color: #5bc0de;*/

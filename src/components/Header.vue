@@ -18,7 +18,7 @@
         <a class="dropdown-item" href="#">
           <div class="color-palette-demo">
             <div class="color-palette-text ">
-              change color
+              <i style="font-size: 15px " class="material-icons">color_lens</i> change color
             </div>
             <div class="color-palette">
               <button class="btn color-button" :style="{backgroundColor: colors.blue}" @click="changeColor('blue')" ></button>
@@ -117,12 +117,13 @@
 
   .color-palette-demo .color-palette-text{
     opacity: 1;
-    text-align: center;
-    border: solid 1px white;
+    text-align: left;
+    border: solid 1px transparent;
     border-radius: 15px;
     color: white;
     height: 30px;
-    width: 165px;
+    /*width: 165px;*/
+    width: 100%;
     transform: rotateX(0deg);
     /*position: absolute;*/
     /*top: 15px;*/
@@ -131,23 +132,23 @@
   }
   .color-palette-demo .color-palette{
     opacity: 0;
-    transform: rotateX(90deg);
+    /*transform: rotateX(90deg);*/
     position: absolute;
-    top: 0px;
+    top: 12px;
     right: 15px;
     transition: all .5s ease-in-out;
   }
   .color-palette-demo:hover .color-palette-text{
     opacity: 0;
-    transform: rotateX(90deg);
+    /*transform: rotateX(90deg);*/
     transition: all .5s ease-in-out;
-    top: 35px;
+    /*top: 35px;*/
   }
   .color-palette-demo:hover .color-palette{
     opacity: 1;
-    transform: rotateX(0deg);
+    /*transform: rotateX(0deg);*/
     transition: all .5s ease-in-out;
-    top: 15px;
+    /*top: 15px;*/
   }
 
   .color-palette .color-button{
