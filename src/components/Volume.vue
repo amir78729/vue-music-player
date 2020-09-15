@@ -22,7 +22,6 @@
 
 <script>
 
-  import {store as state} from '../store/store';
     export default {
       name: "volume",
       data() {
@@ -60,18 +59,6 @@
 </script>
 
 <style scoped>
-  .vol0{
-    background-image: url("../icons/png/004-mute-1.png");
-  }
-  .vol1{
-    background-image: url("../icons/png/005-mute.png");
-  }
-  .vol2{
-    background-image: url("../icons/png/006-volume.png");
-  }
-  .vol3{
-    background-image: url("../icons/png/003-volume-1.png");
-  }
   .icon {
     /*filter: brightness(0.5) sepia(1) saturate(10000%);*/
     /*background-image: url("../icons/png/003-volume-1.png");*/
