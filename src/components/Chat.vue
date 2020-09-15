@@ -12,7 +12,8 @@
 {backgroundImage: `url(${friends[currentChatIndex].image})`}"></div>
         <div class="info">
           <p :style="{color : color}" style="font-size: 20px;transition: .5s;">{{friends[currentChatIndex].name}}</p>
-          <p class="status">online</p>
+          <p class="status" v-if="friends[currentChatIndex].isOnline">online</p>
+          <p class="status" v-else>offline</p>
         </div>
 
       </div>
