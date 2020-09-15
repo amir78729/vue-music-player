@@ -7,14 +7,26 @@
           <i class="material-icons back">arrow_back</i>
         </router-link>
 <!--        <div class="pic" :style="{backgroundImage: `url(${friends[contactIndex].image})`}"></div>-->
-        <div class="pic" :style="
-
-{backgroundImage: `url(${friends[currentChatIndex].image})`}"></div>
+        <div class="pic" :style="{backgroundImage: `url(${friends[currentChatIndex].image})`}"></div>
         <div class="info">
           <p :style="{color : color}" style="font-size: 20px;transition: .5s;">{{friends[currentChatIndex].name}}</p>
           <p class="status" v-if="friends[currentChatIndex].isOnline">online</p>
           <p class="status" v-else>offline</p>
         </div>
+
+        <div class="btn-group" style="position: absolute;right: 10px;top: 10px;">
+          <button class="setting-btn btn btn-sm dropdown-toggle"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i style="font-size: 20px " class="material-icons">...</i>
+          </button>
+          <div class="dropdown-menu menu">
+            <a class="dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">headset</i> Listen Along</a>
+            <a class="dropdown-item" href="#" onclick="deleteFriend()"><i style="font-size: 15px" class="material-icons">delete</i> Delete Friend</a>
+            <a class="dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">clear</i> Clear Chat History</a>
+            <a class="dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">info</i> Friend Information</a>
+          </div>
+        </div>
+
 
       </div>
     </div>
@@ -48,6 +60,11 @@
         currentChatIndex(){
           return this.$store.state.currentChatIndex;
         }
+    },methods: {
+        deleteFriend(){
+          alert("hi");
+          alert('Are you sure you want to delete \"'+ friends[currentChatIndex].name + '\"from your friends?')
+        }
     }
   }
 </script>
@@ -68,6 +85,46 @@
     margin:  auto 5px auto 0px ;
     cursor: pointer;
     transition: .5s;
+  }
+
+  .menu{
+    background-color: #202020;
+    box-shadow: 0 0 10px 0 #00000077;
+
+  }
+  .menu a{
+    color: #777777;
+    background-color: #202020;
+    transition: .3s;
+  }
+  .menu a:hover{
+    color: white;
+    background-color: #252525;
+    transition: .3s;
+  }
+
+  .setting-btn{
+    color: transparent;
+    border: none;
+    height: 40px;
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*top: 10px;*/
+    border-radius: 20px;
+    box-shadow: none;
+    transition: all .5s;
+  }
+  .setting-btn i{
+    transition: all .5s;
+    margin-top: 5px;
+    color: #777777;
+  }
+  .setting-btn:hover i{
+    /*transform: rotate(90deg);*/
+    color: white;
+    /*right: 15px;*/
+    /*top: 15px;*/
+    transition: all .5s;
   }
   .back:hover{
     color: white;

@@ -79,6 +79,8 @@
 <style scoped>
   .menu{
     background-color: #202020;
+    box-shadow: 0 0 10px 0 #00000077;
+
 
   }
   .menu a{
