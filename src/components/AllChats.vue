@@ -23,13 +23,13 @@
           <td>{{ friend.name }}</td>
           <td class="green" v-if="friend.isOnline">online</td>
           <td class="red" v-else>offline</td>
+          <td> </td>
           <td>
             <router-link to="/chat">
               <button @click="goToChat(index)" :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 15px" class="material-icons">chat</i><span class="chat-text">Chat!</span></button>
             </router-link>
-          </td>
-          <td>
-              <button @click="" :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 15px" class="material-icons">headset</i><span class="chat-text">Listen</span></button>
+            <button @click="" :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 15px" class="material-icons">headset</i><span class="chat-text">Listen</span></button>
+
           </td>
 
         </tr>
