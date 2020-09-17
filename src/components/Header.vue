@@ -15,7 +15,7 @@
         <i style="font-size: 20px " class="material-icons">settings</i>
       </button>
       <div class="dropdown-menu menu">
-        <a class="dropdown-item" href="#">
+        <button class="dropdown-item" href="#">
           <div class="color-palette-demo">
             <div class="color-palette-text ">
               <i style="font-size: 15px " class="material-icons">color_lens</i> Change color
@@ -28,34 +28,37 @@
               <button class="btn color-button" :style="{backgroundColor: colors.purple}" @click="changeColor('purple')" ></button>
             </div>
           </div>
+        </button>
 
-        </a>
+<!--        <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">-->
+<!--          <i style="font-size: 15px " class="material-icons">settings</i> Preferences-->
+<!--        </a>-->
+<!--        &lt;!&ndash; Modal &ndash;&gt;-->
+<!--        <div class="modal fade" id="exampleModal" tabindex="-51" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--          <div class="modal-dialog">-->
+<!--            <div class="modal-content">-->
+<!--              <div class="modal-header">-->
+<!--                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                  <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--              </div>-->
+<!--              <div class="modal-body">-->
+<!--                ...-->
+<!--              </div>-->
+<!--              <div class="modal-footer">-->
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--                <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
 
-        <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
-          <i style="font-size: 15px " class="material-icons">settings</i> Preferences
-        </a>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-51" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <router-link to="/preferences">
+          <button class="dropdown-item"><i style="font-size: 15px " class="material-icons">build</i> Preferences</button>
+        </router-link>
 
-        <a class="dropdown-item" href="#">Something else here</a>
+        <button class="dropdown-item" href="#">Something else here</button>
 <!--        <a class="dropdown-item" href="#">Separated link</a>-->
       </div>
     </div>
@@ -107,13 +110,18 @@
 
 
   }
-  .menu a{
+  .menu button{
     color: #777777;
     background-color: #202020;
   }
-  .menu a:hover{
+  .menu button:hover{
     color: white;
     background-color: #252525;
+  }
+
+  button:focus{
+    border: none;
+    outline: none;
   }
 
   .setting-btn{
