@@ -7,21 +7,45 @@
       </div>
 
       <!-- add playlist modal -->
-      <div class="modal fade" id="add-playlist-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade add-playlist-modal" id="add-playlist-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel"><i style="font-size: 20px" class="material-icons">playlist_add</i> Add playlist</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <h5 class="modal-title" :style="{color: color}" id="exampleModalLabel"><i style="font-size: 20px" class="material-icons">playlist_add</i> Add playlist</h5>
+              <button :style="{color: color}" type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              ...
+            <div class="modal-body ">
+
+              <div style="padding: 20px 15px" class="add-playlist-panel" >
+
+                <div class="add-playlist-panel-pic">
+                  <p> <i style="font-size: 15px" class="material-icons">edit</i> </p>
+                </div>
+
+                <hr :style="{backgroundColor: color}">
+
+                <div class="">
+                  <!--          <input type="file">-->
+
+
+                  <div style="padding-left: 0px;margin-top: 10px; width: 100%">
+                    <div style="font-size: 12px; font-weight: bold;" :style="{color: color}">Title: </div>
+                    <input type="text">
+                  </div>
+                </div>
+                <div style="margin-top: 10px;width: 100%">
+                  <div style="font-size: 12px; font-weight: bold;" :style="{color: color}">Description: </div>
+                  <input type="text">
+                </div>
+<!--                <button class="btn add-playlist-btn" :style="{backgroundColor: color}" style="color: white"> Add Playlist!</button>-->
+              </div>
+
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="modal-footer" >
+              <button type="button" class="btn add"  style="background-color: #303030 ;height: 35px;width: max-content" data-dismiss="modal">Close</button>
+              <button type="button" class="btn add" style="height: 35px;width: max-content" :style="{backgroundColor: color}">Save changes</button>
             </div>
           </div>
         </div>
@@ -87,6 +111,74 @@
     /*background-color: red;*/
 
   }
+  .add-playlist-modal .modal-body{
+    background-image: linear-gradient(to bottom, #252525, #181818);
+    border: none;
+  }
+
+  .add-playlist-modal  .modal-header,.modal-content{
+    background-image: linear-gradient(to left, #252525, #181818);
+    border: none;
+  }
+
+  .modal-dialog, .modal-footer, .modal-header{
+    background-color: #202020;
+    box-shadow: 0 0 50px 0  #000000bb ;
+    border: none;
+  }
+
+  .modal h5, div{
+    cursor: default;
+  }
+
+
+
+  .add-playlist-btn{
+    height: 30px;
+    margin-top: 10px;
+    width: 100%;
+    opacity: .7;
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+  .add-playlist-btn:hover{
+    width: 100%;
+    opacity: 1;
+  }
+  .add-playlist-panel{
+
+  }
+  .add-playlist-panel-pic{
+    margin: 0 auto;
+    padding-top: 16px;
+    height: 150px;
+    width:150px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .5s;
+    text-align: center;
+    vertical-align: center;
+    justify-content: center;
+  }
+  .add-playlist-panel-pic:hover{
+    box-shadow: 0 0 100px 0 #000000dd inset;
+  }
+  .add-playlist-panel-pic p{
+    margin: 50px auto;
+    width: 50px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    opacity: .5;
+    transition: .3s;
+  }
+  .add-playlist-panel-pic:hover p{
+    opacity: 1;
+    transition: .3s;
+
+  }
+
   .add{
     margin: auto 10px;
     font-size: 12px;
@@ -96,6 +188,7 @@
     height: 24px;
     text-align: center;
     box-shadow: 0 0 100px 0 #00000000 inset;
+    border: none;
     border-radius: 12px;
     transition: .3s;
     cursor: pointer;
