@@ -3,7 +3,7 @@
       <div class=" container header d-flex" :style="{color: color}">
         <h1><i style="font-size: 30px" class="material-icons">playlist_play</i> Playlists</h1>
         <p class="total">{{playlists.length}} playlists</p>
-          <button class="add btn" type="button" data-toggle="modal" data-target="#add-playlist-modal" :style="{backgroundColor: color}">add playlist</button>
+        <button class="add btn" type="button" data-toggle="modal" data-target="#add-playlist-modal" :style="{backgroundColor: color}">add playlist</button>
       </div>
 
       <!-- add playlist modal -->
@@ -12,24 +12,17 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" :style="{color: color}" id="exampleModalLabel"><i style="font-size: 20px" class="material-icons">playlist_add</i> Add playlist</h5>
-              <button :style="{color: color}" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+              <button :style="{color: color}" type="button" class="close btn" data-dismiss="modal" aria-label="Close" style="outline: none; box-shadow: none">
+                <span aria-hidden="true" ><i style="font-size: 20px" class="material-icons exit ">clear</i></span>
               </button>
             </div>
             <div class="modal-body ">
-
               <div style="padding: 20px 15px" class="add-playlist-panel" >
-
                 <div class="add-playlist-panel-pic">
                   <p> <i style="font-size: 15px" class="material-icons">edit</i> </p>
                 </div>
-
                 <hr :style="{backgroundColor: color}">
-
                 <div class="">
-                  <!--          <input type="file">-->
-
-
                   <div style="padding-left: 0px;margin-top: 10px; width: 100%">
                     <div style="font-size: 12px; font-weight: bold;" :style="{color: color}">Title: </div>
                     <input type="text">
@@ -41,7 +34,6 @@
                 </div>
 <!--                <button class="btn add-playlist-btn" :style="{backgroundColor: color}" style="color: white"> Add Playlist!</button>-->
               </div>
-
             </div>
             <div class="modal-footer" >
               <button type="button" class="btn add"  style="background-color: #303030 ;height: 35px;width: max-content" data-dismiss="modal">Close</button>
@@ -50,6 +42,12 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
 
 
       <div class="d-flex">
@@ -125,6 +123,22 @@
     background-color: #202020;
     box-shadow: 0 0 50px 0  #000000bb ;
     border: none;
+  }
+
+  .exit {
+    transform: rotate(0deg);
+    transition: .3s;
+  }
+
+  .exit:focus{
+    outline: none;
+    border: solid #00000000;
+    box-shadow: 0 0 0 0 #00000000;
+  }
+
+  .exit:hover {
+    transition: .3s;
+    transform: rotate(90deg);
   }
 
   .modal h5, div{

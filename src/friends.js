@@ -11,7 +11,7 @@ export var friends = [
     currentListening: 'Windowpane',
   },{
     name: 'neginhsobhani',
-    image: 'https://cdn.discordapp.com/attachments/732234196487241741/751001268637663302/20200903_132038.jpg',
+    image: 'https://cdn.discordapp.com/attachments/732234196487241741/756210722752692375/unknown.png',
     isOnline: true,
     currentListening: 'Still Loving you',
   },{

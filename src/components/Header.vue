@@ -18,7 +18,7 @@
         <a class="dropdown-item" href="#">
           <div class="color-palette-demo">
             <div class="color-palette-text ">
-              <i style="font-size: 15px " class="material-icons">color_lens</i> change color
+              <i style="font-size: 15px " class="material-icons">color_lens</i> Change color
             </div>
             <div class="color-palette">
               <button class="btn color-button" :style="{backgroundColor: colors.blue}" @click="changeColor('blue')" ></button>
@@ -30,9 +30,33 @@
           </div>
 
         </a>
-        <a class="dropdown-item" href="#">Another action</a>
+
+        <a type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
+          <i style="font-size: 15px " class="material-icons">settings</i> Preferences
+        </a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-51" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a class="dropdown-item" href="#">Something else here</a>
-        <a class="dropdown-item" href="#">Separated link</a>
+<!--        <a class="dropdown-item" href="#">Separated link</a>-->
       </div>
     </div>
 
@@ -122,7 +146,7 @@
     text-align: left;
     border: solid 1px transparent;
     border-radius: 15px;
-    color: white;
+    color: #707070;
     height: 30px;
     /*width: 165px;*/
     width: 100%;
@@ -130,27 +154,42 @@
     /*position: absolute;*/
     /*top: 15px;*/
     /*right: 15px;*/
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
   }
   .color-palette-demo .color-palette{
     opacity: 0;
     /*transform: rotateX(90deg);*/
+    margin:  auto 0;
     position: absolute;
-    top: 12px;
-    right: 15px;
-    transition: all .5s ease-in-out;
+    top: 30px;
+    /*right: 15px;*/
+    transition: all .3s ease-in-out;
   }
   .color-palette-demo:hover .color-palette-text{
-    opacity: 0;
+
+    /*opacity: 0;*/
+    color: white;
     /*transform: rotateX(90deg);*/
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     /*top: 35px;*/
   }
   .color-palette-demo:hover .color-palette{
     opacity: 1;
+    top: 35px;
     /*transform: rotateX(0deg);*/
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     /*top: 15px;*/
+  }
+  .color-palette-demo{
+    height: 8px;
+    transition: .3s;
+    margin-bottom: 25px;
+    /*padding-bottom: 10px;*/
+  }
+  .color-palette-demo:hover{
+    height: 40px;
+    transition: .3s;
+
   }
 
   .color-palette .color-button{

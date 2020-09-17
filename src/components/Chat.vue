@@ -1,5 +1,6 @@
 <template>
   <div class="body">
+
     <div class="chat-area">
       <div class="chat-title d-flex">
         <router-link to="/all-chats" class="back">
@@ -20,10 +21,48 @@
             <i style="font-size: 20px " class="material-icons">...</i>
           </button>
           <div class="dropdown-menu menu">
-            <a class="dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">headset</i> Listen Along</a>
-            <a class="dropdown-item" href="#" onclick="deleteFriend()"><i style="font-size: 15px" class="material-icons">delete</i> Delete Friend</a>
-            <a class="dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">clear</i> Clear Chat History</a>
-            <a class="dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">info</i> Friend Information</a>
+            <button class="btn dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">headset</i> Listen Along</button>
+            <button class="btn dropdown-item" href="#" onclick="deleteFriend()"><i style="font-size: 15px" class="material-icons">delete</i> Delete Friend</button>
+            <button class="btn dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">clear</i> Clear Chat History</button>
+
+
+
+
+
+
+            <button class="btn dropdown-item" >
+              <i style="font-size: 15px" class="material-icons">info</i> Friend Information
+            </button>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Launch demo modal
+            </button>
+<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
           </div>
         </div>
 
@@ -92,12 +131,12 @@
     box-shadow: 0 0 10px 0 #00000077;
 
   }
-  .menu a{
+  .menu button{
     color: #777777;
     background-color: #202020;
     transition: .3s;
   }
-  .menu a:hover{
+  .menu button:hover{
     color: white;
     background-color: #252525;
     transition: .3s;

@@ -1,5 +1,13 @@
 <template>
   <div id="app">
+
+
+
+
+
+
+
+
 <!--    <button @click="changeColor('blue')" >blue</button>-->
 <!--    <button @click="changeColor('red')" >red</button>-->
 <!--    <button @click="changeColor('yellow')" >yellow</button>-->
