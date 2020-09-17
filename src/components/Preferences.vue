@@ -2,9 +2,20 @@
   <div class="body">
     <div class="container header d-flex" :style="{color: color}">
       <h1><i style="font-size: 30px" class="material-icons">build</i> Preferences</h1>
-      
     </div>
     <div class="center">
+      <div class="container">
+        <h2>personal setting</h2>
+        <p>name: </p>
+        <input type="text" placeholder="Enter your name">
+        <hr>
+        <p>password: </p>
+        <input type="password" placeholder="Enter your old password" >
+        <input type="password" placeholder="Enter your new password" >
+        <input type="password" placeholder="Enter your new password again" >
+        <button class="btn btn-block btn-dark">submit</button>
+        <hr>
+      </div>
 
     </div>
   </div>
@@ -33,6 +44,13 @@
 
 
   }
+  h2,h3,h4,h5,p{
+    color: #FFF;
+  }
+  hr{
+    background-color: #fff;
+  }
+
   h1  {
     /*font-weight: bold;*/
     cursor: default;
