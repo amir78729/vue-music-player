@@ -3,8 +3,31 @@
       <div class=" container header d-flex" :style="{color: color}">
         <h1><i style="font-size: 30px" class="material-icons">playlist_play</i> Playlists</h1>
         <p class="total">{{playlists.length}} playlists</p>
-          <div class="add" :style="{backgroundColor: color}">add playlist</div>
+          <button class="add btn" type="button" data-toggle="modal" data-target="#add-playlist-modal" :style="{backgroundColor: color}">add playlist</button>
       </div>
+
+      <!-- add playlist modal -->
+      <div class="modal fade" id="add-playlist-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><i style="font-size: 20px" class="material-icons">playlist_add</i> Add playlist</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <div class="d-flex">
         <div class="playlist-item d-flex" style="">
           <div v-for="(playlist,index) in playlists" class="playlist-item-song">
