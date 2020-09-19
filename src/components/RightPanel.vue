@@ -11,8 +11,9 @@
           <div class="picture" :style="{backgroundImage: `url(${friend.image})`}"></div>
           <div class="status" v-if="friend.isOnline"></div>
           <div class="friend-info">
-            <p :style="{color:color}"> <i style="font-size: 12px" class="material-icons">people</i> {{friend.name}}</p>
-            <p style="margin-top: -20px; color: #777777; font-size: 14px"><i style="font-size: 10px" class="material-icons">headset</i> {{friend.currentListening}}</p>
+            <p :style="{color:color}"> {{friend.name}}</p>
+            <p style="margin-top: -20px; color: #777777; font-size: 12px"><i style="font-size: 10px" class="material-icons">headset</i> {{friend.currentListening}}</p>
+            <p style="margin-top: -20px; color: #555555; font-size: 11px"><i style="font-size: 10px" class="material-icons">people</i> Artist name</p>
             <router-link to="/chat">
               <button @click="goToChat(index)" :style="{backgroundColor: color}" class="btn chat"><i style="font-size: 10px" class="material-icons">chat</i><span class="chat-text">Chat!</span></button>
             </router-link>
@@ -71,6 +72,7 @@
     background-image: linear-gradient(to right, #181818, #181818);
     position: relative;
   }
+
   .friend .chat{
     transition: .3s;
     opacity: .1;
@@ -93,7 +95,8 @@
 
   .friend:hover {
     transition: all .5s;
-    background-image: linear-gradient(to right, #222222, #181818);
+    background-image: linear-gradient(to right, #181818, #202020);
+    margin-left: 5px;
   }
   .picture{
     transition: all .5s;
@@ -109,7 +112,7 @@
   }
   .picture:hover {
     transition: all .5s;
-    background-size: 70px 70px;
+    background-size: 63px 63px;
   }
   .status{
     transition: all .5s;
@@ -126,7 +129,7 @@
     position: absolute;
     height: 60px;
     width: calc(100% - 90px);
-    top: 10px;
+    top: 5px;
     right: 10px;
     font-size: 15px;
   }
