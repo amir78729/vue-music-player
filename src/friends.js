@@ -25,10 +25,10 @@ export var friends = [
     isOnline: true,
     currentListening: 'Matarsak',
   },{
-    name: 'Rozhin Sattarpour',
+    name: 'Rozhin_st',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751035755731877938/20200903_153735.jpg',
     isOnline: false,
-    currentListening: 'some bullshit',
+    currentListening: 'some latino bullshit',
   },{
     name: 'elem99',
     image: 'https://cdn.discordapp.com/attachments/732234196487241741/751080769581219920/unknown.png',
