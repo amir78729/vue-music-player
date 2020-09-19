@@ -22,7 +22,7 @@
           </button>
           <div class="dropdown-menu menu">
             <button class="btn dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">headset</i> Listen Along</button>
-            <button class="btn dropdown-item" href="#" onclick="deleteFriend()"><i style="font-size: 15px" class="material-icons">delete</i> Delete Friend</button>
+            <button class="btn dropdown-item" @click="deleteFriend"><i style="font-size: 15px" class="material-icons">delete</i> Delete Friend</button>
             <button class="btn dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">clear</i> Clear Chat History</button>
 
 
@@ -35,7 +35,7 @@
             </button>
 
 
-<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+<!--            </a>-->
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -99,8 +99,8 @@
         }
     },methods: {
         deleteFriend(){
-          alert("hi");
-          alert('Are you sure you want to delete \"'+ friends[currentChatIndex].name + '\"from your friends?')
+          let str = 'Are you sure you want to delete \"'+ this.friends[this.currentChatIndex].name + '\"from your friends?';
+          alert(str);
         }
     }
   }
