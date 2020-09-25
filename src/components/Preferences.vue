@@ -5,7 +5,7 @@
     </div>
     <div class="center">
       <div class="container row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" style="border-right: solid #303030 1px" >
           <h5>personal settings</h5>
           <p :style="{color: color}">Name: </p>
           <input type="text" placeholder="Enter your name">
@@ -31,8 +31,11 @@
           <input type="password" placeholder="Enter your new password again" >
           <button :style="{backgroundColor: color}" class="btn btn-block btn-dark" style="margin-bottom: 50px">submit</button>
         </div>
-        <hr>
+
       </div>
+
+      <hr style="height: 1px; background-color: #303030; width: 95%">
+
 
     </div>
   </div>
