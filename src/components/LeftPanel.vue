@@ -1,5 +1,5 @@
 <template>
-  <div style="" class="">
+  <div style="padding-bottom: 40px" class="">
 <!--    {{isHome}}-->
 <!--    {{isSongs}}-->
 <!--    {{isAlbums}}-->

@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" style="position: relative;">
     <div class="search">
       <button class="btn" id="search-button" :style="{backgroundColor: color}">
         <i class="fa fa-search" style="color: white; text-align: left;"></i>
@@ -8,6 +8,12 @@
       <input type="search" id="search-area" style="outline: none">
       </input>
     </div>
+
+
+    <div class="logo">
+      <h1 :style="{color: color}">logo</h1>
+    </div>
+
 
     <div class="btn-group" style="position: absolute;right: 10px;top: 10px;">
       <button class="setting-btn btn btn-sm dropdown-toggle"
@@ -212,6 +218,24 @@
     box-shadow: 0 0 100px 10px #00000088 inset;
 
   }
+  .logo{
+    margin: auto auto;
+    cursor: default;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    text-align: center;
+    position: page;
+    align-content: center;
+    justify-content: center;
+  }
+  .logo h1{
+    font-size: 40px;
+    transition: .3s;
+  }
+  .logo:hover h1{
+    font-size: 41px;
+    transition: .3s;
+  }
+
 
   input {
     border: none;

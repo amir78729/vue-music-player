@@ -211,7 +211,7 @@
     box-shadow: 0 0 100px 0 #00000077 inset;
     transition: .3s;
   }
-  h1  {
+  h1,h2,h5,p  {
     /*font-weight: bold;*/
     cursor: default;
   }

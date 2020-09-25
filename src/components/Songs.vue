@@ -159,7 +159,7 @@
     /*height: 67vh;*/
     overflow: auto;
   }
-  h1  {
+  h1,h2,h5,p  {
     /*font-weight: bold;*/
     cursor: default;
   }

@@ -67,7 +67,7 @@
     background-color: #202020;
     padding: 0px 10px 40px 10px;
   }
-  h1  {
+  h1,h2,h5,p  {
     /*font-weight: bold;*/
     cursor: default;
   }
