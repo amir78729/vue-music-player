@@ -23,7 +23,7 @@
           <div class="dropdown-menu menu">
             <button class="btn dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">headset</i> Listen Along</button>
             <button class="btn dropdown-item" @click="deleteFriend"><i style="font-size: 15px" class="material-icons">delete</i> Delete Friend</button>
-            <button class="btn dropdown-item" href="#"><i style="font-size: 15px" class="material-icons">clear</i> Clear Chat History</button>
+            <button class="btn dropdown-item" @click="clearChat"><i style="font-size: 15px" class="material-icons">clear</i> Clear Chat History</button>
 
 
 
@@ -101,7 +101,10 @@
         deleteFriend(){
           let str = 'Are you sure you want to delete \"'+ this.friends[this.currentChatIndex].name + '\"from your friends?';
           alert(str);
-        }
+        },clearChat(){
+        let str = 'Are you sure you want to clear your chat history with \"'+ this.friends[this.currentChatIndex].name + '\"?';
+        alert(str);
+      }
     }
   }
 </script>
