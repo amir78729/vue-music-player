@@ -1,7 +1,7 @@
 <template>
   <div class=" body">
     <div class=" container header d-flex" :style="{color: color}">
-      <h1><i style="font-size: 30px" class="material-icons">library_music</i> Songs</h1>
+      <h2 :style="{color: color}"><i style="font-size: 30px" class="material-icons">library_music</i> Songs</h2>
       <p class="total">{{data.length}} songs</p>
     </div>
     <div class="center">

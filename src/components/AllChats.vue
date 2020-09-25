@@ -1,7 +1,7 @@
 <template>
   <div class="body ">
     <div class=" container header d-flex" :style="{color: color}">
-      <h1><i style="font-size: 30px" class="material-icons">chat</i> All Chats</h1>
+      <h2 :style="{color: color}"><i style="font-size: 30px" class="material-icons">chat</i> All Chats</h2>
       <p class="total">{{friends.length}} chats</p>
     </div>
     <div class="center">

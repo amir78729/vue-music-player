@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <div class="container header d-flex" :style="{color: color}">
-      <h1><i style="font-size: 30px" class="material-icons">album</i> Albums</h1>
+      <h2 :style="{color: color}"><i style="font-size: 30px" class="material-icons">album</i> Albums</h2>
       <p class="total">{{}} albums</p>
     </div>
     <div class="center">

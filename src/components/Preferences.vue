@@ -1,7 +1,7 @@
 <template>
   <div class="body">
     <div class="container header d-flex" :style="{color: color}">
-      <h1><i style="font-size: 30px" class="material-icons">build</i> Preferences</h1>
+      <h2 :style="{color: color}"><i style="font-size: 30px" class="material-icons">build</i> Preferences</h2>
     </div>
     <div class="center">
       <div class="container row">
@@ -11,7 +11,7 @@
           <input type="text" placeholder="Enter your name">
           <p :style="{color: color}">Picture: </p>
           <div class="row">
-            <div class="profile-pic">
+            <div style="margin-left: 20px" class="profile-pic">
             </div>
 
 <!--            <div class="" style="margin: 0 auto; align-content: center; justify-content: center;text-align: center">-->

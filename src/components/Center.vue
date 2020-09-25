@@ -2,7 +2,7 @@
   <div class=" body">
     <div >
       <div class=" container header" :style="{color: color}">
-        <h1><i style="font-size: 30px" class="material-icons">home</i> Home</h1>
+        <h2 :style="{color: color}"><i style="font-size: 30px" class="material-icons">home</i> Home</h2>
       </div>
       <div class="home-item container " :style="{color: color}">
         <div class="subtitle d-flex">
